@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulario Actores favoritos</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		function Actor(nombre_n,edad_n,lugarNacimiento_n){
+				this.nombre = nombre_n;
+				this.edad = edad_n;
+				this.lugarNacimiento = lugarNacimiento_n;
+		}
+			
+			
+		
+		actor1= new Actor("Al Pacino",70,"Nueva York");
+		peliculasActor1 = new Array("El padrino","Heat","Tarde de perros");
+		actor2= new Actor("Robert de Niro",70,"Nueva Jersey");
+		peliculasActor2 = new Array("Toro salvaje","Una historia del bronx","El padre de ella");
+		actor3= new Actor("Marlon Brandon",90,"Los Angeles");
+		peliculasActor3 = new Array("Motin en la Bounty","La ley del silencia","El padrino");
+		arrayActores = [actor1,actor2,actor3];
+		arrayPeliculas = [peliculasActor1,peliculasActor2,peliculasActor3];
+		
+		function elegirActor(){ 
+			for (var i=0;i<document.formularioActores.actor.length;i++){ 
+				if (document.formularioActores.actor[i].checked) 
+					break; 
+			} 
+			var actorElegido = document.formularioActores.actor[i].value ;
+			document.write("El actor elegido es " + actorElegido + "<br>");
+			
+			for (i=0;i<this.arrayActores.length;i++) {
+						if(this.arrayActores[i].nombre == actorElegido){
+							posicion = i;
+							break;
+						}
+					}
+			
+			document.write("DATOS ACTOR<br>");
+			var actorEl = this.arrayActores[posicion];
+					for(propiedad in actorEl){
+						document.write(propiedad + " " + actorEl[propiedad] + "<br>");
+					}
+			document.write("PELICULAS<br>");		
+			var arrayP = arrayPeliculas[posicion];	
+			for (x=0;x<arrayP.length;x++){
+					document.write(arrayP[x] + "<br>");
+			}
+		} 
+		 
+		</script>
+	</head>
+
+<body>
+<form name ="formularioActores">
+<h2>Formulario de Actores</h2>
+	Actores
+	</br><input type="radio" name="actor" value="Al Pacino">Al Pacino
+	</br><input type="radio" name="actor" value="Robert de Niro">Robert de Niro
+	</br><input type="radio" name="actor" value="Marlon Brandon"> Marlon Brandon
+	</br><input type="button" value="Enviar" onclick="elegirActor()"> 
+</form>
+
+</body>
+</html>

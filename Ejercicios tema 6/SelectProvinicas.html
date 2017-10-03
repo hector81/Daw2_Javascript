@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulario Provincias</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		
+		function elegirProvincia(){ 
+			var provinciaElegida;
+			var numeroSelectElegido = document.getElementById("provincia");
+			provinciaElegida = numeroSelectElegido.options[numeroSelectElegido.selectedIndex].value;
+		
+			
+			document.write("La provincia elegida es " + provinciaElegida + "<br>");
+		} 
+		 
+		</script>
+	</head>
+
+<body>
+<form name ="formularioProvincias">
+	<h2>Formulario de provincias</h2>
+	Provincias
+	<select id="provincia" name="provincia">
+		<option value="La Rioja">La Rioja</option>
+		<option value="Navarra">Navarra</option>
+		<option value="Guipuzcoa">Guipuzcoa</option>
+		<option value="Vizcaya">Vizcaya</option>
+		<option value="Álava">Álava</option>
+	</select>
+	</br><input type="button" value="Enviar" onclick="elegirProvincia()"> 
+</form>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<script type="text/javascript">
+//coger
+function getCookie(c_name){
+	//esto crea un array con x i y
+	var i,x,y,ARRcookies=document.cookie.split(";");
+	//recorre array
+	for (i=0;i<ARRcookies.length;i++){
+		x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+		y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+		x=x.replace(/^\s+|\s+$/g,"");
+		if (x==c_name){
+			return unescape(y);
+		}
+	}
+}
+//enviar
+function setCookie(c_name,value,exdays){
+	var exdate=new Date();//sacamos la fecha
+	exdate.setDate(exdate.getDate() + exdays);
+	expires= exdate.toUTCString();
+	document.cookie = c_name + "=" + value + ";" + "expires =" + expires;
+}
+
+function checkCookie(){
+	var username=getCookie("username");//coge la cookie enviada
+	if (username!=null && username!=""){//si no existe
+		alert("Bienvenido " + username);
+	}else{//si existe
+		username=prompt("Por favor, Introduzca su usuario:","");
+		if (username!=null && username!=""){
+			setCookie("username",username,365);
+		}
+	}
+}
+
+function borrarCookie(){
+	var exdate = new Date();
+	expires = exdate.toUTCString();
+	name = prompt("Por favor, Introduzca su usuario:", "");
+	document.cookie = "username=" + name + ";" + "expires =" + expires;
+}
+
+</script>
+</head>
+<body>
+	<input type="button" name="chequeaCookie" value="Chequear las cookies" onclick="checkCookie();"><br><br>
+	<input type="button" name="borrarCookie" value="Borrar las cookies" onclick="borrarCookie();">
+
+</body>
+</html>

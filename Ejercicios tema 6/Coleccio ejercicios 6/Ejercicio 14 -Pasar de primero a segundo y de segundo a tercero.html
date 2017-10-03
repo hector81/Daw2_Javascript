@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 14-Tenemos varios formularios que dependen del mismo documento y
+queremos pasar la información de unos a otros, de forma que al pulsar el
+primer botón escriba en el segundo cuadro de texto lo escrito en el primero y al
+pulsar el segundo botón haga lo mismo en el tercer cuadro de texto respecto
+del primero..
+-->
+<html>
+	<head>
+		<title>Ejercicio 14- Pasar de primero a segundo y segundo a tercero</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+
+			//funcion
+			function pasarPrimeroAsegundo(){
+				document.getElementById("f2").value=document.getElementById("f1").value;
+			}
+			//funcion
+			function pasarSegundoATercero(){
+				document.getElementById("f3").value=document.getElementById("f2").value;
+			}
+		
+				 
+		</script>
+	</head>
+
+<body>
+	<form name="formulario1"> 
+		<input type="text" value="" id="f1">	
+	</form>
+	<br>
+	<form id="formulario2"> 
+		<input type="text" value="" id="f2">
+	</form>
+	<br>
+	<form id="formulario3"> 
+		<input type="text" value="" id="f3">
+	</form>
+	<br>
+	<input type="button" value="Pasar de 1 a 2" onclick="pasarPrimeroAsegundo()"> <input type="button" value="Pasar de 2 a 3" onclick="pasarSegundoATercero()">
+	
+	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- avise cuando se pulsa click o
+dobleclick sobre cada uno de los botones correspondientes: -->
+<html>
+	<head>
+		<title>1 click o doble click</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			function avisoUnClick(){
+				alert("Has hecho un click sobre el boton");
+			}
+			
+			function avisoDosClick(){
+				alert("Has hecho doble click sobre el boton");
+			}
+			
+		</script>
+	</head>
+
+<body>
+	<input type="button" value="Pulsa 1 Click" onclick="avisoUnClick()"/>
+	<input type="button" value="Pulsa doble click" ondblclick="avisoDosClick()"/>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 11.- Realiza una página web que haga desaparecer elementos (p.ej: un botón,
+una caja de texto, un texto, …) al paso del ratón y los muestre con un click de
+ratón sobre otro texto “Mostrar Elementos”.
+-->
+<html>
+	<head>
+		<title>Ejercicio 11: Mostrar y hacer desaparecer elementos</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			function borrarElemento(numero){
+				if(numero==1)
+				document.getElementById('boton').style.visibility = 'hidden';
+				if(numero==2)
+				document.getElementById('caja').style.visibility = 'hidden';
+				if(numero==3)
+				document.getElementById('texto').style.visibility = 'hidden';
+			}
+			
+			function mostrarElementos(){
+				document.getElementById('boton').style.visibility = 'visible';
+				document.getElementById('caja').style.visibility = 'visible';
+				document.getElementById('texto').style.visibility = 'visible';
+			}
+			
+		</script>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			
+			body {
+				background-color:grey;
+			}
+			
+			div#boton{
+				width: 300px;
+				margin:20px;
+			}
+			
+			div#caja{
+				width: 300px;
+				margin:20px;
+			}
+			
+			div#texto{
+				background-color:red;
+				width: 300px;
+				margin:20px;
+			}
+			
+			#mostrar{
+				margin:20px;
+			}
+		
+		</style>
+	</head>
+
+<body>	
+	<br>
+	<div onmouseover="borrarElemento(1)" id="boton">
+		<input type="button" value="Botón que desaparece al pasar el raton" onclick="#" >
+	</div>
+	<br><br>	
+	<div onmouseover="borrarElemento(2)" id="caja">
+		<input type="text" value="Caja que desaparece al pasar el raton" size="50">
+	</div>
+	<br><br>
+	<div onmouseover="borrarElemento(3)" id="texto">
+		<p>Texto que desaparece al pasar el raton</p>	
+	</div>
+	<br><br>
+	<hr>
+	<div id="mostrar">
+		<input type="button" value="Mostrar elementos" onclick="mostrarElementos()">
+	</div>
+</body>
+</html>

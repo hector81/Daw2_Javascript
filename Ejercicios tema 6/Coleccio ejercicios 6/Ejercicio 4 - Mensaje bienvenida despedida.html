@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Realiza una página que muestre un mensaje de bienvenida cuando se
+cargue y una confirmación de salida una vez que abandonemos la página. -->
+<html>
+	<head>
+		<title>Mensaje bienvenida despedida</title>
+		<meta charset="utf-8">
+	
+		<script type="text/javascript">
+	
+		</script>
+	</head>
+
+<body>
+	<p style="color:blue;">Pagina</p>
+	<script type="text/javascript">
+		window.onload = function (e) {
+				var e = e || window.event;
+			    alert("BIENVENDIO A LA PÁGINA");
+			}
+	
+	
+		 window.onbeforeunload = function (e) {
+				var e = e || window.event;
+				if (e){
+					 e.returnValue ="";
+				}
+			}
+
+        </script> 
+</body>
+</html>
+

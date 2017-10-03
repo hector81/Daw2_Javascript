@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Realiza una página en la que detecte, utilizando el objeto event, si se ha
+pulsado el botón derecho o izquierdo del ratón y nos muestre el mensaje
+correspondiente por pantalla. -->
+<html>
+	<head>
+		<title>Detectar pulsación de ratón</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		/*
+		Botón Izquierdo - 0
+		Botón del centro - 1
+		Botón derecho - 2
+		*/
+		function detectarBoton(elEvento){
+			pulsado = elEvento || window.event;
+			alert(pulsado.button);
+			if (pulsado.button==0)
+			{
+			    alert("El botón del ratón pulsado fue el izquierdo");
+			}
+			
+			if (pulsado.button==1)
+			{
+		     	alert("El botón del ratón pulsado fue el del centro");
+			}
+			
+			if (pulsado.button==2)
+			{
+		     	alert("El botón del ratón pulsado fue el derecho");
+			}
+				
+		 
+		}
+		document.onmousedown=detectarBoton;
+				 
+		</script>
+		<style type="text/css">
+			body {width: 100%;height:100%;}
+		</style>
+	</head>
+
+<body >
+	<p style="color:blue;">Por favor, pulse un botón de su ratón</p>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- 3.- Utiliza los eventos onmouseover y onmouseout para cambiar de imagen
+(cualquier imagen) según estemos situados sobre ella o no.-->
+<html>
+	<head>
+		<title>Cambiar imagenes raton</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		
+			function cambiarAlegria(){
+				img.src="alegre.jpg" ;
+			}
+			
+			function cambiarTriste(){
+				img.src="triste.jpg";
+			}
+				 
+		</script>
+	</head>
+
+<body>
+	<h1>Imagen cambiante raton</h1>
+	<img name="img" src="triste.jpg" onmouseover="cambiarAlegria()" onmouseout="cambiarTriste()"> 
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- 13-Se trata de que al pulsar un botón de un formulario se concatenen, en un
+cuadro de texto, lo escrito previamente en sendos cuadros de texto.
+-->
+<html>
+	<head>
+		<title>Ejercicio 13- Concatenar textos formularios</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			//funcion
+			function concatenarTextosFormularios(){
+				var t1 = document.getElementById("texto1").value;
+				var t2 = document.getElementById("texto2").value;
+				document.getElementById("textoConcatenado").value=  t1 + t2;
+			}		 
+		</script>
+	</head>
+
+<body>
+	<form name="formulario1"> 
+		<input type="text" value="" id="texto1"> <input type="text" value="" id="texto2">	
+		<br>
+		<input type="button" value="La respuesta es" onclick="concatenarTextosFormularios()">
+		<br>
+		<input type="text" value="" id="textoConcatenado">	
+	</form>
+	
+</body>
+</html>

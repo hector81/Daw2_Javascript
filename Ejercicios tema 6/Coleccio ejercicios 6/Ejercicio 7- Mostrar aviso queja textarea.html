@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 7.- Realiza un pequeño formulario de queja, para que una vez que pierda el
+foco el textarea “Queja” nos muestra el siguiente mensaje: “ Gracias por
+expresar su opinión. Saludos”.
+-->
+<html>
+	<head>
+		<title>Ejercicio 7- Mostrar aviso queja textarea</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+
+		function mostrarQueja(evento){
+			var nombre = document.getElementById("nombre").value;
+			var apellidos = document.getElementById("apellidos").value;			
+			if(nombre.length <=0 || apellidos.length <=0){
+				alert("Recuerda que debes poner tu nombre y apellidos para que sepamos quien eres");
+			}else{
+				if(evento.value == ""){
+					alert(nombre + " " + apellidos + ".Nos has puesto ninguna queja");
+				}else{
+					alert(nombre + " " + apellidos + ".Gracias por expresar su opinión. Saludos");
+				}
+				
+			}
+			
+		}
+		
+		
+				 
+		</script>
+	</head>
+
+<body>
+<form id="formu"> 
+	Nombre: <input type="text" id="nombre"/><br>
+	Apellidos: <input type="text" id="apellidos"/><br>
+	Queja<textarea cols="20" rows="20" id="queja" onblur="mostrarQueja(this)"></textarea>
+</form>
+</body>
+</html>

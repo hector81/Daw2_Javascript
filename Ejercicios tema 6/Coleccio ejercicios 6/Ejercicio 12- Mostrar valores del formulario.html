@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 12-Realiza una página web que contenga el siguiente formulario y muestre los
+valores introducidos por el usuario.
+-->
+<html>
+	<head>
+		<title>Ejercicio 12- Enviar datos formulario</title>
+	<meta charset="utf-8">
+
+	<script type="text/javascript">
+
+		function enviar(){
+			//sexo
+			var sexoElegido = '';
+			elegirSexo = document.getElementsByName("sexo"); 
+			for (var i=0; i<elegirSexo.length; i++) {
+				if (elegirSexo[i].checked == true) { 
+				sexoElegido= elegirSexo[i].value;
+				} 
+			}
+			
+			// publicidad
+			var publi="";
+			var x = document.getElementById("publicidad").checked;
+			if(x== true){
+				publi="SI";
+			}else{
+				publi="NO";
+			}
+			//archivo
+			var archivo=""; var ruta="";
+			var file = document.getElementById("fotos").files[0];
+			if (file) {
+				archivo="Nombre del archivo: " + file.name;
+			}
+		
+			//PONEMOS LOS DATOS
+			ponerDatos = document.getElementById('datos'); //donde vamos a mostrar los datos
+			ponerDatos.innerHTML='<h1> Datos introducidos: </h1>'+
+			'<p>Nombre: '+document.getElementById('nombre').value+'</p>'+
+			'<p>Apellidos: ' + document.getElementById('apellidos').value+'</p>'+
+			'<p>DNI: ' + document.getElementById('dni').value+'</p>'+
+			'<p>Archivo enviado: ' + archivo +'</p>'+
+			'<p>Sexo: '+sexoElegido+'</p>'+
+			'<p>¿Quieres publicidad?: ' + publi+'</p>';
+		}
+		
+		function borrar(){
+			
+		}
+			
+	</script>
+</head>
+
+<body>
+
+    <form name ="formularioContacto">
+
+        Nombre : <input id="nombre" name="nombre" type="text"/><br/>
+        Apellidos : <input id="apellidos" name="apellidos" type="text"/><br/>
+        DNI : <input id="dni" name="dni" type="text"/><br/>
+		
+		Sexo : <br/>
+		<input type="radio" name="sexo" id="hombre" value="Hombre"/>Hombre
+        <input type="radio" name="sexo" id ="mujer" value="Mujer"/>Mujer<br/>
+		
+		Incluir mi foto : <input type="file" id="fotos" required="required" /><br>
+		Enviar publicidad : <input id="publicidad" type="checkbox" required="required"/><br>
+		
+		<input type="button" value="Mostrar datos" onclick="enviar()"> 
+		<input type="reset" value="Borrar los datos introducidos" value="Si quiero publicidad" onclick="borrar()"><br>
+
+    
+    <div id="datos">
+
+	</div>
+    </form>
+</body>
+</html>

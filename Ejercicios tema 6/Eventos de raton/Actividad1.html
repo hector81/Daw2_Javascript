@@ -1,0 +1,35 @@
+<!-- Crea un elemento <div> y muestra, cuando el
+usuario pase el ratón por encima, el borde
+destacado. Cuando el ratón salga del div, se
+volverá a mostrar el borde original. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio </title>	
+		<style type="text/css">
+			div {
+				margin: 2.5em auto;
+				border: 1px solid black;
+				padding: 9px;
+				background-color: pink;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function bordeDestacado(x) {
+				x.style.border = "9px solid red";
+			}
+
+			function bordeNormal(x) {
+				x.style.border = "1px solid black";
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div onmouseover="bordeDestacado(this)" onmouseout="bordeNormal(this)">
+			<img src="mundo.jpg" id="imgworld">
+		</div>
+	</body>
+</html>

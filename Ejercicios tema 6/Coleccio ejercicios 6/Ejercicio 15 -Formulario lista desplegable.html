@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 15- Ahora queremos ir añadiendo, al pulsar un botón, las selecciones que
+hagamos de una lista desplegable de un formulario a un textarea de otro
+formulario.
+-->
+<html>
+	<head>
+		<title>Ejercicio 15- Formulario lista desplegable</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			var arrayProductos = [];
+			var contador =0;
+			//funcion
+			function enviarProductos(){
+				var producto="";
+				producto = document.getElementById("selectFrutas");
+				producto = producto.options[producto.selectedIndex].value;
+				arrayProductos.push(producto);//lo ponemos en un array
+				//comprueba las veces que se repite en un array
+				for(var i=0; i<arrayProductos.length;i++){
+					if(arrayProductos[i] == producto){
+						contador++;
+					}
+				}
+				if(contador >1){//si se repite mas de una vez no dejara colocarlo en la lista
+					document.getElementById("productosSeleccionados").innerHTML += "";
+				}else{
+					document.getElementById("productosSeleccionados").innerHTML += producto+'\n';//insertamos con salto de linea
+				}
+				contador=0;			
+			}
+		
+				 
+		</script>
+	</head>
+
+<body>
+	<form id="formularioFrutas"> 
+		<caption>Selecciones un producto</caption> <input type="button" value="Añadir" onclick="enviarProductos()"><br>
+		<select name="selectFrutas" id="selectFrutas">
+			<option value="Tomates">Tomates</option>
+			<option value="Judias">Judias</option>
+			<option value="Manzanas">Manzanas</option>
+			<option value="Peras">Peras</option>
+			<option value="Alcachofas">Alcachofas</option>
+		</select>
+	</form>
+	<br>
+	<caption>Elementos añadidos</caption><br>
+	<textarea cols="40" rows="20" id="productosSeleccionados"></textarea>
+</body>
+</html>

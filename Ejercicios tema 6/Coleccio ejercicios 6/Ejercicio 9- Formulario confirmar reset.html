@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<!-- 9-Realiza un formulario en el que utilizando el evento onreset, podamos no
+perder los datos pulsando el botón Confirmar (confirm) o borremos
+directamente pulsando el botón Evento.
+-->
+<html> 
+<head> 
+   	<title>Ejercicio 9- Formulario confirmar reset</title> 
+	<script>
+		var miVentana="";
+		//funciones
+		function enviarDatos(){
+			var Nombre = document.getElementById("nombre").value;
+			var Apellidos = document.getElementById("apellidos").value;
+			var Direccion = document.getElementById("direccion").value;
+			var Provincia = document.getElementById("provincia").value;
+			miVentana = window.open( "", "miVentana", "top=300,bottom= 300, left=400,width=300,height=300,resizable=yes" );//resizable para redimensionar la ventana
+			miVentana.document.write('Datos enviados<br>');
+			miVentana.document.write("Nombre : " + Nombre + "<br>");
+			miVentana.document.write("Apellidos : " + Apellidos + "<br>");
+			miVentana.document.write("Direccion : " + Direccion + "<br>");
+			miVentana.document.write("Provincia : " + Provincia + "<br>");
+			miVentana.document.write('<button onclick="window.close()">Cerrar</button>');
+		}
+		
+		function confirmarReset(){
+			var acepta=confirm("Atención se van a limpiar los datos del formulario");	
+			if (acepta)
+				return true;
+			else
+				return false;
+		}
+		
+		function eventoReset(){
+				
+		}
+		
+	</script> 
+</head>
+
+<body> 
+	
+	<form name="formularioReset"  onreset="confirmarReset()" > 
+		<caption>Introduzca sus datos. Gracias.</caption><br>
+		Nombre: <input type="text" value="" id="nombre"><br><br>
+		Apellidos: <input type="text" value="" id="apellidos"><br><br>
+		Dirección: <input type="text" value="" id="direccion"><br><br>
+		Provincia: <input type="text" value="" id="provincia"><br><br>
+		<input type="reset" value="Confirmar reset"> <input type="reset" value="Evento Reset" onclick="eventoReset()"><br>
+		<input type="button" value="Enviar datos" onclick="enviarDatos()">
+	</form> 
+</body> 
+</html>
+  

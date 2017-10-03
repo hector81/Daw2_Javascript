@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<!-- 10.- Crea una página y haz que en el evento onload del body cargue una
+función que no existe para que se genere un error. Por otra parte gestiona el
+evento de error que se produce para que nos informe que se ha producido un
+error para el objeto window.
+-->
+<html> 
+<head> 
+   	<title>Ejercicio 10 - Evento onload con error</title> 
+<script> 
+	function mensajeError() {
+			alert('Se ha producido un error de carga');
+	}
+	
+	//function funcionNOEXISTE(){ 
+	//	alert("Se ha cargado la página");
+	//}
+	
+</script> 
+</head>
+
+<body onload="funcionNOEXISTE()" onError="mensajeError()"> 
+
+</body> 
+</html>
+

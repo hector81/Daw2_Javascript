@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- 8-Utiliza el evento onselect para que nos muestre un aviso cuando
+seleccionemos texto de un textarea.
+-->
+<html> 
+<head> 
+   	<title>Ejercicio 8- Onselect que avisa texto seleccionado</title> 
+	<script> 
+		function avisoTextoSeleccionado() {
+			alert("Acabas de seleccionar un texto");
+		}
+	</script> 
+</head>
+
+<body> 
+	<h1>Pon un texto y selecciona parte de él</h1>
+	<form name="formularioTEXTAREA"> 
+		<textarea id="textoAreaSub" cols="60" rows="20" onselect="avisoTextoSeleccionado()"></textarea>
+	</form> 
+</body> 
+</html>
+

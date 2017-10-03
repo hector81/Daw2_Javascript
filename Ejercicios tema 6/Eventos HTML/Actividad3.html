@@ -1,0 +1,37 @@
+<!-- -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio </title>	
+		
+		<script type="text/javascript">
+		
+		function focusFunctionNombre() {
+			variableId= document.getElementById("Nombre");
+			variableId.style.border = "3px solid blue";
+		}
+
+		function blurFunctionNombre() {
+			variableId= document.getElementById("Nombre");
+			variableId.style.border = "1px solid red";
+		}
+		
+		function focusFunctionMail() {
+			variableId= document.getElementById("Mail");
+			variableId.style.border = "3px solid blue";
+		}
+
+		function blurFunctionMail() {
+			variableId= document.getElementById("Mail");
+			variableId.style.border = "1px solid red";
+		}
+		
+		</script>
+	</head>
+	<body>	
+	Escribe tu nombre: <br><br>
+			Nombre<input type="text" id="Nombre" onfocus="focusFunctionNombre()" onblur="blurFunctionNombre()"><br><br>
+			E-MAIL<input type="text" id="Mail" onfocus="focusFunctionMail()" onblur="blurFunctionMail()"><br>
+	</body>
+</html>

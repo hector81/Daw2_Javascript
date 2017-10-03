@@ -1,0 +1,37 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio pasar raton y que se ponga en naranja el titulo y marron cuando se quite el raton con addeventlistener</title>	
+		<script type="text/javascript">
+		window.onload= function(){
+			var arraySelectores = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+				for(var i =0; i<arraySelectores.length;i++){
+					arraySelectores[i].attachEvent('onmouseover', ponerNaranja);
+					arraySelectores[i].attachEvent('onmouseout', ponerMarron);
+				}
+				
+				
+			function ponerNaranja() {
+				this.style.color = "orange";
+			}
+
+			function ponerMarron() {
+				this.style.color = "brown";
+			}
+		}
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>Novedades</h1><p>Aquí presentamos las novedades.</p>
+		<h3 id="subtitulo2">Lanzamos el producto X-FASHION</h3>
+		<p>Este producto permite estirar la piel y dejarla como la de un bebe.</p>
+		<p><img src="http://i.imgur.com/tg5Bs.png" title="Imagen del producto" alt="Imagen producto"/></p>
+		<h3>MEJORAMOS EL PRODUCTO T-MOTION</h3>
+		<p>Hemos lanzado una nueva versión del producto T-MOTION.</p>
+		<p><img src="http://i.imgur.com/SpEyc.png" title="Imagen del producto" alt="Imagen producto"></p>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 6.- Crea un sencillo formulario donde se verifique mediante la función verificar,
+que se han recogido los valores del nombre y la edad y que la edad sea
+correcta.
+-->
+<html>
+	<head>
+		<title>Ejercicio 6- Funcion verificar</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+		var nombre;
+		var edad;
+		function verificar(){
+			var booleanoComprobar = true;
+			nombre = document.getElementById("input_nombre").value;
+			edad = document.getElementById("input_edad").value;
+			if( nombre == null || nombre.length == 0 ){
+				alert("El campo nombre no puede ser vacío");
+				booleanoComprobar = false;
+			}
+			if(isNaN(edad)){
+				booleanoComprobar = false;
+				alert("El campo debe ser un numero");
+			}
+			if( edad == null || edad.length == 0 ){
+				alert("El campo edad no puede ser vacío");
+				booleanoComprobar = false;
+			}
+			if(booleanoComprobar== true){
+				alert("Datos enviados");
+				alert("Eres " + nombre +  " y tienes " + edad + " años");
+				document.getElementById("input_nombre")="";
+				document.getElementById("input_edad")="";
+			}else{
+				alert("Datos no enviados");
+				formu.document.getElementById("input_nombre")="";
+				formu.document.getElementById("input_edad")="";
+			}
+		}
+		
+		
+				 
+		</script>
+	</head>
+
+<body>
+<form action="" id="formu" onsubmit="verificar();"> 
+	Nombre: <input type="text" id="input_nombre"/><br>
+	Edad: <input type="text" id="input_edad"/><br>
+	<br><input type="button" value="Enviar" onclick="verificar()"/>
+</form>
+</body>
+</html>

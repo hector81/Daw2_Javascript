@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Realiza una página en la que detecte, utilizando el objeto event, si se ha
+pulsado el botón derecho o izquierdo del ratón y nos muestre el mensaje
+correspondiente por pantalla. -->
+<html>
+	<head>
+		<title>Ejercicio 5 - Detecta cambios en el input de un formulario</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+
+		function detectarCambiosNombre(valor){
+			if(document.getElementById("input_nombre")){
+				alert("El input_nombre ha sido modificado con este valor: " + valor);
+			}
+		}
+		
+		function detectarCambiosApellidos(valor){
+			if(document.getElementById("input_apellidos")){
+				alert("El input_apellidos ha sido modificado con este valor: " + valor);
+			}
+		}
+				 
+		</script>
+	</head>
+
+<body>
+	Mi nombre es: <input type="text" id="input_nombre" value="" onchange="detectarCambiosNombre(this.value)"/><br>
+	Mis apellidos son: <input type="text" id="input_apellidos" value="" onchange="detectarCambiosApellidos(this.value)"/>
+
+</body>
+</html>
