@@ -1,0 +1,29 @@
+<!-- Mueve el foco de un campo de texto a otro,
+dentro de un formulario, al pulsar la tecla
+ENTER dentro de cada campo. Para poder
+implementar el desplazamiento entre nodos
+nos  ayudaremos  de  la  propiedad
+nextSibling
+: -->
+<html>
+	<head>
+		<title>Ejercicio 14- Pasar de primero a segundo y segundo a tercero</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="Actividad 4 pdf 2 mover foco.js"></script>
+
+		
+				 
+	</head>
+
+<body>
+	<form name="formulario1" onsubmit="return comprobarCampos()" > 
+		Nombre<input type="text" value="" id="f1" onKeyDown="pasarFoco(0)">	
+		Apellidos<input type="text" value="" id="f2" onKeyDown="pasarFoco(1)"> 
+		Provincia<input type="text" value="" id="f3" onKeyDown="pasarFoco(2)">
+	
+		<input type="submit" value="Enviar" action="https://www.google.es/"> 
+	</form>
+	
+</body>
+</html>
+				

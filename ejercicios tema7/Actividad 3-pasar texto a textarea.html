@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+
+			//funcion
+			function pasarTexto(){
+				var textoP = document.getElementById("textoEscribir").value;
+				document.getElementById("texto").innerHTML = textoP;
+			}
+			
+				 
+		</script>
+	</head>
+
+<body>
+
+	<form id="formulario3"> 
+		<p id="texto" style="border:1px solid black; padding:1em; width:300px;"></p>
+		<h1>Introduce un texto</h1>
+		<textarea id="textoEscribir"></textarea> <br><br>
+		<input type="button" value="Insertar valor" onclick="pasarTexto()"><br>
+	</form>
+	
+	
+	
+</body>
+</html>

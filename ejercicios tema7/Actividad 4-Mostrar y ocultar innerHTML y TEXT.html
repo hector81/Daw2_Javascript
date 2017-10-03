@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+
+			//funcion
+			function MuestraInnerHTML(){
+				var textoP = "<div style='border:1px solid red; padding:1em; width:200px;'>" + "Esto es un texto de ejemplo para esto" + "</div>";
+				document.getElementById("texto").innerHTML = textoP;
+			}
+			
+			function OcultarInnerHTML(){
+				var textoP = "";
+				document.getElementById("texto").innerHTML = textoP;
+			}
+			
+			function MuestraInnerText(){
+				var textoP = "Esto es un texto de ejemplo para esto";
+				document.getElementById("texto").innerHTML = textoP;
+			}
+			
+			function OcultarInnerText(){
+				var textoP = "";
+				document.getElementById("texto").innerHTML = textoP;
+			}
+			
+				 
+		</script>
+	</head>
+
+<body>
+
+		<p id="texto" style="border:1px solid black; padding:1em; width:300px;"></p>
+		<div style="border:1px solid black; padding:1em; width:300px;">
+			<a id="MuestraInnerHTML" href="#" onclick="MuestraInnerHTML()">MuestraInnerHTML</a><br>
+			<a id="OcultarInnerHTML" href="#" onclick="OcultarInnerHTML()">OcultarInnerHTML</a><br>
+			<a id="MuestraInnerText" href="#" onclick="MuestraInnerText()">MuestraInnerText</a><br>
+			<a id="OcultarInnerText" href="#" onclick="OcultarInnerText()">OcultarInnerText</a><br>
+		</div>
+	
+	
+	
+</body>
+</html>

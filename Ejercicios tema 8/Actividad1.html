@@ -1,0 +1,26 @@
+<!--  Crea un script que compruebe con AJAX y el servidor si el nombre escogido por el usuario está libre o no.
+****El script de servidor se llamará compruebaDisponibilidad.php  y el parámetro que contiene el nombre se llama login.
+****La respuesta del servidor es "si" o "no", en función de si el nombre de usuario está libre o ya ha sido ocupado por otro usuario (será una respuesta aleatoria)
+****A partir de la respuesta del servidor, se mostrará un mensaje al usuario indicando la disponibilidad de ese nombre de usuario 
+
+
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio Ajax actividad 1</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="Actividad1.js"></script>
+	</head>
+
+<body>
+	<h1>Comprobar disponibilidad del login</h1>
+
+		Nombre del usuario<input type="text" id="login" value=""/><br>
+		<a onclick="obtenerDatosServidor()" href="#">Comprobar disponibilidad...</a>
+	
+	<div id="loginComprobar"></div>
+	
+</body>
+</html>

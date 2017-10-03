@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio</title>
+		<meta charset="utf-8">
+		
+		<style type="text/css">
+			* {
+				margin:0;
+				padding:0;
+			}
+			
+			body {
+				margin:1.5em auto;
+				padding:15px;
+				background-color: pink;
+			}
+			
+			div {
+				width: 300px;
+				margin:10px ;
+				padding:10px;
+				background-color: yellow;
+				color:black;
+			}
+			
+		</style>
+		
+		<script type="text/javascript">
+			function alertarNodeName(objeto){
+				alert(objeto.nodeName);
+			}
+			
+			function verNodeNameHijo(objeto){
+				alert(objeto.firstChild.nodeName);
+			}
+			
+	
+			
+				 
+		</script>
+	</head>
+
+<body>
+
+	<form id="formulario3"> 
+		<div id="uno" onclick="alertarNodeName(this)"><p>Haz click aquí para ver el nodeName de this</p></div>
+		<div id="dos" onclick="alertarNodeName(this)"><p>Haz click aquí para ver el nodeName de this</p></div>
+		<div id="tres" onclick="alert(this.nodeName)"><p>Haz click aquí para ver el nodeName de this</p></div>
+		<div id="cuatro" onclick="alert(this.firstChild.nodeName)"><p>Haz click aquí para ver el nodeName del hijo de h2</p></div>
+		<div id="cinco" onclick="this.firstChild.nodeValue='Aaaaaaah!'"><p>Haz click aquí para modificar el texto en el hijo del nodo h2 usando nodeValue</p></div>
+		<div id="seis" onclick="this.textContent='Eeeeeeeh!'"><p>Haz click aquí para modificar el texto en el hijo derivado del nodo h2 usando textContent</p></div>
+		<div id="siete" onclick="this.innerHTML='Siiiiiih!'"><p>Haz click aquí para modificar el texto con innerHTML del nodo h2</p></div>
+		<div id="ocho" onclick="alert('Contenido innerHTML actual es: '+this.innerHTML);this.innerHTML='<div style=\' width:50%; border-style:solid; 
+		background-color: #FF7F50;  \'>Ahamham!</div>'"><p>Haz click aquí para modificar el código con innerHTML del nodo h2</p></div>
+		<div id="nueve"  onclick="this.textContent='Uuuuuuh!"><p>Haz click aquí pero no existe un textContent modificable</p></div>
+		<div id="diez" onclick="alert('Obtenemos: '+this.textContent)"><p>Haz click aquí para ver el textContent y veras</p></div>
+		<div id="once" onclick="this.firstChild.innerHTML='No podemos'"><p>Si intentamos modificar un nodo de texto con innerHTML</p></div>
+		
+	</form>
+	
+	
+	
+</body>
+</html>

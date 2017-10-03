@@ -1,0 +1,80 @@
+<!-- Realiza una calculadora. El funcionamiento será el siguiente. Dispondrá de
+números del 0 al 9 y de los signos +, -, *, /, =. Para contener cada uno de estos
+números y signos usaremos una etiqueta div (un div para cada uno).
+Existirá otra etiqueta div para mostrar el resultado. El funcionamiento de la
+calculadora será el mismo que el de la calculadora de Windows. Al pulsar en la
+etiqueta div que contenga cada número, el div de resultado añadirá el valor
+a la izquierda del que existía antes, y así sucesivamente, hasta pulsar un signo.
+Cuando pulsemos el signo mostrará en la pantalla el resultado. En el siguiente
+paso volveremos a introducir otro número como antes, hasta que pulsemos la
+tecla igual. Al haber pulsado el igual se mostrará el resultado en el div de
+resultado. Se deberá incluir un div que nos permite inicializar la calculadora. -->
+
+<html>
+	<head>
+		<title>Ejercicio</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="ColEjerciciosT7-3.js"></script>
+		<style type="text/css">
+			.calculadora { 
+				border: 1px solid black; 
+				width: 180px;
+				text-align: center;
+                background-color: white; 
+			}
+ 					 
+			#textoPantalla { 
+				width: 150px; 
+				height:40px;
+				border: 1px black solid; 
+				text-align: center;  
+				padding: 0px 5px;
+				background-color: white;  
+				overflow: hidden;
+			}
+			
+			div {
+				position: relative;
+				border: 1px solid black;
+				width: 40px;
+				float:left;
+			}
+
+		</style>
+		
+				 
+	</head>
+
+<body>
+	<div class="calculadora">
+	<form action="#" name="calculadora" id="calculadora">
+		<div id="textoPantalla"> </div>
+
+		<div onclick="ponerNumero(this)">7</div>
+		<div onclick="ponerNumero(this)">8</div>
+		<div onclick="ponerNumero(this)">9</div>
+		<div onclick="operacion(this)">/</div>
+
+
+		<div onclick="ponerNumero(this)">4</div>
+		<div onclick="ponerNumero(this)">5</div>
+		<div onclick="ponerNumero(this)">6</div>
+		<div onclick="operacion(this)">*</div>
+
+		<div onclick="ponerNumero(this)">1</div>
+		<div onclick="ponerNumero(this)">2</div>
+		<div onclick="ponerNumero(this)">3</div>
+		<div onclick="operacion(this)">-</div>
+		
+		<div onclick="ponerNumero(this)">0</div>
+		<div onclick="borrar()">C</div>
+		<div onclick="ponerNumero(this)">9</div>
+		<div onclick="operacion(this)">+</div>
+
+		<div onclick="resultado()">=</div>
+
+		</form>
+	</div>
+</body>
+</html>
+				

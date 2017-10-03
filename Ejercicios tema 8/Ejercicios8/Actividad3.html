@@ -1,0 +1,24 @@
+<!-- Crea un script en el que se realice una petición AJAX mediante el método GET para cargar el fichero datosJSON.php
+La página PHP, consultará a una tabla sql y nos devolverá los resultados en formato JSON. Será una lista de centros con su información (nombre, localidad, provincia, etc.)
+Deberemos evaluar la expresión recibida con la función eval() de JavaScript para convertir la cadena de texto recibida en un objeto JSON. 
+ var resultados=eval('('+this.responseText+')');
+Después recorreremos mediante un bucle todos los objetos literales recibidos en el array resultados y mostraremos su contenido.
+
+
+
+
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio Ajax actividad 3</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="Actividad3.js"></script>
+	</head>
+
+<body>
+	<h1>Lista centros</h1>
+	<div id="ListaLugares"></div>
+</body>
+</html>

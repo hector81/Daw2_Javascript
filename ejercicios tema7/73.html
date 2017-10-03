@@ -1,0 +1,46 @@
+<!-- te debe decir de que color es cada parrafo -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Propiedades de los nodos</title>
+<script type="text/javascript">
+
+        function dimeElemento(){
+			//obtenemos el nodo body para descender sobre el
+			var obj_body = document.body;
+			//obtenemos el numero de nodos hijos
+			var numeroHijos = obj_body.childNodes.length;
+			alert('Numero de hijos del nodo body: '+numeroHijos);
+			var mensaje="";
+			var nodoElement;
+			var valorText;
+            for (i = 0; i < numeroHijos; i++) {
+				mensaje='El nodo ' + i + ' corresponde a la etiqueta: ' + obj_body.childNodes[i].nodeName;
+				mensaje+='\n\n y es un nodo de tipo= ' + obj_body.childNodes[i].nodeType;
+				if (obj_body.childNodes[i].nodeType == 1){
+				//si se trata de un nodo tipo Element
+					nodoElement=obj_body.childNodes[i];
+					mensaje+='\n\n cuyo atributo style es: ' + nodoElement.getAttribute("style");
+					//guardamos el valor del atributo style
+					if (nodoElement.hasChildNodes() || nodoElement.firstChild.nodeType == 3) {
+					//si el primer hijo es un nodo tipo Text guardamos su valor
+					valorText=nodoElement.childNodes[0].nodeValue;
+					}
+				}
+				if (obj_body.childNodes[i].nodeType == 3){
+					//si se trata de un nodo tipo text
+					mensaje+='\n\n cuyo valor es: ' + valorText;		
+				}
+				mensaje+='\n\n';
+                      
+                alert(mensaje);
+            }
+        }
+</script>
+</head>
+<body onload="dimeElemento()">
+<h1 style="color:green">Parrafo de prueba</h1>
+<p style="color:blue">Segundo parrafo</p>
+</body>
+</html>

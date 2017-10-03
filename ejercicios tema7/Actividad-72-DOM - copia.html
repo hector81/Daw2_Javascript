@@ -1,0 +1,35 @@
+<!-- Recorre todos los nodos de la página a partir del
+elemento <body>, y muestra en ventanas de alerta
+el nombre y tipo de nodo. Además si se trata de un
+nodo tipo Element deberás mostrar su atributo
+style, en el caso de que se trate de un nodo tipo
+Text muestra su valor.-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicios - 2 DOM</title>
+<script type="text/javascript">
+
+	window.onload = function() {
+		var mostrarInformacion = document.getElementById("informacion");
+		var nodo=document.getElementsByTagName("body");
+		mostrarInformacion.innerHTML = mostrarInformacion.innerHTML + "PROPIEDADES <br>"+
+        "Tipo: "+nodo.nodeType+"\n"+
+        "Nombre: "+nodo.nodeName+"\n"+
+        "Clase: "+nodo.tagName+"\n"+
+        "Valor: "+nodo.nodeValue ;
+
+	  
+	}
+</script>
+</head>
+ 
+<body>
+<h1 style="color:green">Recorriendo nodos del DOM</h1>
+<p style="color:blue">Texto cualquiera</p>
+<p style="color:red">Otro texto</p>
+
+<div id="informacion"></div>
+</body>
+</html>

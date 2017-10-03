@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio Ajax actividad 8-2</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="ColEjerciciosT8-3.js"></script>
+		<style type="text/css">
+			#sugerencias {
+				width:200px; 
+				border:1px solid black; 
+				display:none; 
+				margin-left: 83px;
+			}
+			#sugerencias ul {
+				list-style: none; 
+				margin: 0; 
+				padding: 0; 
+				font-size:.85em;
+			}
+			#sugerencias ul li {
+				padding: .2em; 
+				border-bottom: 1px solid silver;
+			}
+			.seleccionado {
+				font-weight:bold; 
+				background-color: yellow;
+			}
+		</style>
+	</head>
+
+<body>
+<h1>Autocompletar texto</h1>
+	<form>
+	  <label for="municipio">Municipio</label> &nbsp;&nbsp;
+	  <input type="text" id="municipio" name="municipio" size="30" />
+	  <input type="text" id="oculto" name="oculto" style="display:none;" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- Crea un script en el que se realice una petición AJAX mediante el método GET para cargar el fichero catalogo.xml (o datosXML.php)
+Esta aplicación PHP, nos devolverá un fichero XML, con una lista de CD's de música con el título, artista, año, etc.
+Haremos un bucle para recorrer todos los cd's del catálogo e imprimir en una tabla la información del título, artista, año.
+Dentro de cada CD, accederemos al elemento que nos interese e imprimiremos su contenido. Para imprimir el contenido de cada nodo, tendremos que
+ hacerlo con el comando try { } catch {}, ya que si intentamos acceder a un nodo que no tenga contenido, nos dará un error de JavaScript, puesto 
+ que el elemento hijo no existe, y entonces se detendrá la ejecución de JavaScript y no imprimirá nuestro listado.
+
+
+
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio Ajax actividad 2</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="Actividad2.js"></script>
+	</head>
+
+<body>
+	<h1>Lista DISCOS XML</h1>
+	<div id="discosArea"></div>
+</body>
+</html>
