@@ -1,0 +1,31 @@
+<!-- 24. Crea un script donde se abran ventanas emergentes (pop-up) cada tres
+segundos. La página principal deberá contener un botón que al pulsarlo
+deje de abrir ventanas emergentes y no se abran más. Funciones a utilizar:
+setInterval() y clearTimeout() .
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 22: Crea un vínculo a una página denominada home.htm </title>
+		
+	</head>
+	<body>
+		<h1>Ejercicio 24: Abrir ventanas pop up o emergentes cada 3 segundos</h1>
+		<br>
+		<input type="button" value="Dejar de abrir ventanas" onclick="cerrarVentanas()">
+		<script type="text/javascript">	
+			var pop = setInterval("abrirVentana()", 3000);
+		
+			function abrirVentana(){
+				window.open("https://librosweb.es/libro/javascript/");
+			}
+	
+			function cerrarVentanas(){
+				clearTimeout(pop);
+			}
+					
+		</script>
+	</body>
+</html>

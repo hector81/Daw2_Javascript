@@ -1,0 +1,75 @@
+<!--   2-
+Una distribuidora de libros vende a librerias y a particulares. En sus ventas, aplica bonificaciones
+por cantidad según el siguiente criterio:
+a- A librerías: hasta 24 unidades un 10%; más de 24 unidades el 25%
+b- A particulares: menos de 6 unidades nada; desde 6 hasta 18 unidades el 5%
+, y más de 18 unidades ,el 10%
+
+El tipo de cliente se distingue entre LIBRERIAS y PARTICULAES. Dado el importe bruto de
+una compra de libros, el tipo de cliente de que se trata y la cantidad total pedida
+por el mismo, determinar el importe final bonificado
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio distribuidora libros  </title>
+	</head>
+	<body>
+		<h1><b>DISTRIBUIDORA DE LIBROS</b></h1>
+		<form name="formulario">			
+			Ingresa la cantidad de libros comprados:
+			<input type="text" name="cantidadLibros" value="" id="recargar"/>
+			<br/>
+			Ingresa el total de compras en euros:
+			<input type="text" name="totalCompras" value="" id="resultado" />
+			<br/><br/>
+		 
+			<input type="button" value="LIBRERIA" onclick="aplicar_Descuentos_Libreria();">
+			<input type="button" value="PARTICULAR" onClick="aplicar_Descuentos_Particulares()"/>
+			<input type="button" value="Borrar datos" onClick="ponerCero()"/>
+		</form>
+	
+		<script type="text/javascript">
+			var descuento;
+			var total;
+			var precio;
+			function aplicar_Descuentos_Libreria(){	
+				cantidadLibros = document.getElementById("recargar").value;
+				if(cantidadLibros< 25 ){
+					descuento = 10;
+				}else if(cantidadLibros > 24 ){
+					descuento = 25;
+				}
+				precio = document.getElementById("resultado").value;
+				total = parseInt(precio - ((precio)/100*descuento));
+				alert("El precio total era de " + precio + " euros");
+				alert("Se le ha aplicado un descuento del " + descuento + "%");
+				alert("El precio final es " + total + " euros");
+			}
+			
+			function aplicar_Descuentos_Particulares(){
+				cantidadLibros = document.getElementById("recargar").value;
+				if(cantidadLibros< 7 ){
+					descuento = 0;
+				}else if(cantidadLibros > 6 && cantidadLibros < 19){
+					descuento = 5;
+				}else{
+					descuento = 10;
+				}
+				precio = document.getElementById("resultado").value;
+				total = parseInt(precio - ((precio)/100*descuento));
+				alert("El precio total era de " + precio + " euros");
+				alert("Se le ha aplicado un descuento del " + descuento + "%");
+				alert("El precio final es " + total + " euros");
+			}
+			
+			function ponerCero(){
+				var valor="";
+				document.getElementById("recargar").value = valor;
+				document.getElementById("resultado").value = valor;
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!-- 8
+•	Añade todo el código necesario para indicar que un vehículo se encuentra acelerando o desacelerando
+•	Implementa los métodos para indicar que está realizando cada tipo de vehículo en un momento dado.
+•	Añade otros métodos si lo consideras conveniente.
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 8 </title>	
+		<script type="text/javascript">
+			//constructor
+			function Vehiculo(maxFuel, maxPasajeros, velocidad) {
+			this.maxFuel = maxFuel;
+			this.maxPasajeros = maxPasajeros;
+			this.velocidad = velocidad;
+			this.acelerar = acelerar;
+			this.desacelerar = desacelerar;
+			}
+			
+			function acelerar(cantidad) {
+				this.velocidad= this.velocidad + cantidad;
+			}
+			function desacelerar(cantidad) {
+				this.velocidad= this.velocidad - cantidad;
+			}
+
+		function Auto(modelo) {
+			this.modelo = modelo;
+			this.DoblarAizq = function () {
+				return "Girar a la izquierda";
+			};
+			this.DoblarAdcha = function () {
+				return "Girar a la derecha";
+			};
+		}
+
+
+		function Avion(maxAltitud, nroDeMotores) {
+			this.maxAltitud = maxAltitud;
+			this.nroDeMotores = nroDeMotores;
+			this.descender =descender;
+			this.ascender =ascender;
+				
+		}
+		
+		function ascender(cantidad) {
+				this.maxAltitud= this.maxAltitud + cantidad;
+			}
+			function descender(cantidad) {
+				this.maxAltitud= this.maxAltitud - cantidad;
+			}
+
+		Auto.prototype= new Vehiculo(100, 7, 240);
+		var auto1 = new Auto("SEAT");
+
+		Avion.prototype= new Vehiculo(10000, 200, 1240);
+		var avion1 = new Avion(1000, 4);
+
+		
+		
+	    document.write("El auto tiene una capacidad de  " + auto1.maxFuel + " ,puede llevar " + auto1.maxPasajeros + " y va a una velocidad de " + auto1.velocidad +" km/h y es de marca " + auto1.marca +"<br>");
+		auto1.acelerar(100);
+		document.write("El auto tiene una capacidad de  " + auto1.maxFuel + " ,puede llevar " + auto1.maxPasajeros + " y va a una velocidad de "+ auto1.velocidad +" km/h y es de marca " + auto1.marca +"<br>");
+		auto1.desacelerar(50);
+		document.write("El auto tiene una capacidad de  " + auto1.maxFuel + " ,puede llevar " + auto1.maxPasajeros + " y va a una velocidad de "+ auto1.velocidad +" km/h y es de marca " + auto1.marca +"<br>");
+		document.write(auto1.DoblarAizq() + " " + auto1.DoblarAdcha() + "<br>");
+		
+		document.write("El avion tiene una capacidad de  " + avion1.maxFuel + " ,puede llevar " + avion1.maxPasajeros + " y va a una velocidad de "+
+		avion1.velocidad +" km/h y va a una altitud de " + avion1.maxAltitud + " y el numero de motores es " + avion1.nroDeMotores + "<br>");
+		avion1.descender(100);
+		document.write("El avion tiene una capacidad de  " + avion1.maxFuel + " ,puede llevar " + avion1.maxPasajeros + " y va a una velocidad de "+ 
+		avion1.velocidad +" km/h y va a una altitud de " + avion1.maxAltitud + " y el numero de motores es " + avion1.nroDeMotores + "<br>");
+		avion1.ascender(5000);
+		avion1.desacelerar(100);
+		document.write("El avion tiene una capacidad de  " + avion1.maxFuel + " ,puede llevar " + avion1.maxPasajeros + " y va a una velocidad de "+ 
+		avion1.velocidad +" km/h y va a una altitud de " + avion1.maxAltitud + " y el numero de motores es " + avion1.nroDeMotores + "<br>");
+
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

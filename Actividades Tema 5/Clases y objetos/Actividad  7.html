@@ -1,0 +1,88 @@
+<!--  
+Utilizando JSON, definir la estructura de un objeto
+que almacena una factura. Las facturas están
+formadas por la información de la empresa (nombre
+de la empresa, dirección, teléfono, NIF), la
+información del cliente (similar a la de la empresa),
+una lista de elementos (cada uno de los cuales
+dispone de descripción, precio, cantidad) y otra
+información básica de la factura (importe total, tipo de
+IVA, forma de pago).
+Una vez definidas las propiedades del objeto, añadir
+un método que calcule el importe total de la factura y
+actualice el valor de la propiedad correspondiente.
+Por último añadir otro método que muestre por
+pantalla el importe total de la factura.
+ -->
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Actividad 7  </title>		
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			
+			var empresa = {nombreEmpresa:"Eulen",direccion:"Calle Paula Montalt 17", telefono:"941945963", nif:"987654321_P"};	
+			//recorrer e imprimir objeto
+			document.write("EMPRESA</br>");
+			for(var miPropiedad in empresa){
+					document.write("<b>" + miPropiedad + " : </b>" +  empresa[miPropiedad] + " ,</br>");
+			}
+			
+			
+			var cliente = {nombreCliente:"Héctor",direccion:"Calle San Fermin 7", telefono:"699666696", nif:"16541654-K"};
+			//recorrer e imprimir objeto
+			document.write("CLIENTE</br>");
+			for(var miPropiedad in cliente){
+					document.write("<b>" + miPropiedad + " : </b>" +  cliente[miPropiedad] + " ,</br>");
+			}
+			
+			
+			var pedidos = [{descripcion:"Palas de arena",precio:17, cantidad:15},{descripcion:"Aspiradoras",precio:89, cantidad:18}];
+			document.write("LISTA PEDIDOS</br>");
+			for(var i = 0; i<pedidos.length; i++){
+				for(var miPropiedad in pedidos[i]){
+						//Accedemos a las propiedades:
+						document.write("<b> " + miPropiedad + " </b>"  + pedidos[i][miPropiedad] + "</br>");
+				}
+			}	
+					
+			var totalFactura = calcularTotal(pedidos);
+			var facturas = 	{importeTotal:totalFactura + (totalFactura/100)*16 ,tipoIva:16,formaPago:"Por transferencia bancaria"};
+			//recorrer e imprimir objeto
+			document.write("FACTURA</br>");
+			for(var miPropiedad in facturas){
+					document.write("<b>" + miPropiedad + " : </b>" +  facturas[miPropiedad] + " ,</br>");
+			
+			}		
+			
+				
+			function calcularTotal(pedidos){
+				var precioIndividual = 0;
+				var CantidadIndividual=0;
+				var total =0;
+				for(var i = 0; i<pedidos.length; i++){
+					for(var miPropiedad in pedidos[i]){
+							if(miPropiedad == "precio"){
+								precioIndividual = pedidos[i][miPropiedad];
+							}
+							if(miPropiedad == "cantidad"){
+								CantidadIndividual = pedidos[i][miPropiedad];
+							}						
+					}
+					total += (precioIndividual*CantidadIndividual);
+					precioIndividual = 0;
+					CantidadIndividual = 0;
+				}
+				return total;
+			}
+
+			
+			
+		</script>
+	</body>
+</html>

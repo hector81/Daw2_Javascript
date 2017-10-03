@@ -1,0 +1,41 @@
+<!-- 25. Realiza un script que cree una ventana nueva y desde la ventana nueva se
+modifique el color de fondo de la ventana principal y además añada una
+imagen cualquiera. Para realizar este último paso deberemos utilizar los
+métodos createElement() del objeto document y appendChild()
+
+Ejemplo: varnuevoElemento = document.createElement('tagElegido');
+
+Donde tagElegido representa el tipo de elemento que vamos a crear indicando su
+correspondiente etiqueta HTML (div, p, h1, li, img, button, …)
+
+ElementoContenedor.appendChild(nuevoElemento);
+
+Mediante este método añadimos el nuevo elemento creado al elemento que lo va a
+contener (por ejemplo un div).
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 25: Crear una ventana y que se modifique desde allí el color de fondo de la principal </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">	
+			var ventana = window.open("", "hija", "width=200 height=300");
+			ventana.document.write("<input type='button' value='cambiar Color' onclick='window.opener.color()'>\n\<input type='button' value='poner Imagen' onclick='window.opener.imagen()'>");
+
+			function color() {
+				document.bgColor = "blue";
+			}
+
+			function imagen(){
+				var fondo = document.createElement('img');
+				fondo.setAttribute("src", "alegre.jpg");
+				document.body.appendChild(fondo);
+			}	
+
+		</script>
+	</body>
+</html>

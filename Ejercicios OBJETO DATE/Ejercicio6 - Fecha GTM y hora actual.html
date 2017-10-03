@@ -1,0 +1,26 @@
+<!-- 6 .Muestra la fecha y hora actual según el horario GMT y según el horario actual -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 6: Muestra la fecha y hora actual según el horario GMT y según el horario actual</title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var FechaHoraGTM = new Date();
+			var FechaHoraActual = new Date();
+		
+		
+			document.write("Fecha y hora actual según el horario GMT : " + FechaHoraGTM.toUTCString());
+			document.write("<br>");
+			
+			document.write("Fecha y hora actual según el horario actual : " + FechaHoraActual.toLocaleString());
+			document.write("<br>");  
+			
+			document.write("Otro : " + FechaHoraActual.toDateString());
+			document.write("<br>");  
+			
+		</script>
+	</body>
+</html>

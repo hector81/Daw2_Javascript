@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio  </title>
+		
+	</head>
+	<body>
+		<h1><b>I.E.S COMERCIO</b></h1>
+		<script type="text/javascript">
+			var profesores = ["Cristina","Pablo","Marisa","Luis"];
+			var asignaturas = ["Seguridad", "Bases de Datos","Sistemas Informáticos", "Redes"];
+			var alumnos = [24,17,28,26];
+			
+			function imprimeDatos(indice){
+				document.write("<br/>"+profesores[indice]+" del módulo de "+asignaturas[indice]+" ,tiene "+alumnos[indice]+" alumnos en clase.");
+			}
+			
+			for (i=0;i<profesores.length;i++) {
+				imprimeDatos(i);
+			}
+			
+		</script>
+	</body>
+</html>

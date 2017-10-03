@@ -1,0 +1,65 @@
+<!-- 6.	Para trabajar la herencia basada en prototipos, define un tipo de objeto Cometa cuyas propiedades de instancia (específicas de cada objeto) sean diámetro, 
+temperatura y nombre. La temperatura será un valor numérico que suponemos está en grados centígrados. Como propiedad común a todos los objetos de tipo cometa 
+se tiene definicion (que debe contener la definición de cometa según el diccionario) y como métodos comunes obtenerRadio (que debe devolver el radio) y
+ obtenerTemperaturaFarenheit (que debe devolver el valor de temperatura expresado en grados Farenheit). 
+Crea tres objetos de tipo cometa y comprueba que puedes acceder tanto a las propiedades específicas como a las propiedades comunes y métodos comunes desde 
+cada objeto.
+
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 6 </title>	
+		<script type="text/javascript">
+			//constructor con parametros
+			function Cometa(diametro_n, temperatura_n, nombre_n){
+				this.diametro = diametro_n;
+				this.temperatura = temperatura_n;//grados centigrados
+				this.nombre = nombre_n;
+			}
+			
+			function prototipoCometa(){
+				this.definicion = "Los cometas son cuerpos celestes constituidos por hielo, polvo y rocas que orbitan alrededor del Sol.";
+				this.obtenerRadio = obtenerRadio;
+				this.obtenerTemperaturaFarenheit = obtenerTemperaturaFarenheit ;
+			}
+			
+			//obtenerRadio (que debe devolver el radio)
+			function obtenerRadio(diametro){
+				var radio = diametro/(2*3.1416)
+				return radio;
+			}
+			
+			//obtenerTemperaturaFarenheit (que debe devolver el valor de temperatura expresado en grados Farenheit)
+			function obtenerTemperaturaFarenheit(temperatura){
+				var grados = (temperatura*1.8)+32;
+				return grados;
+			}
+		
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//objto herencia
+			Cometa.prototype = new prototipoCometa();
+			
+			cometa1 = new Cometa(5800, 9, "Cometa West, 1976");
+			cometa2 = new Cometa(789525, -9, "Cometa Ikeya-Seki, 1965");
+			cometa3 = new Cometa(2563, -45, "Cometa Skjellerup-Maristany, 1927");
+			
+			var arrayCometas = [cometa1,cometa2,cometa3];
+			var objeto;
+			//recorremos
+			for(var i = 0; i<arrayCometas.length; i++){
+				objeto = arrayCometas[i];
+				document.write("<b>COMETA " + (i+1) + "</b></br>");
+				//Accedemos a las propiedades:			
+				document.write("<b>DIAMETRO </b>" +objeto.diametro + "<b> TEMPERATURA CELSIUS </b>"  + objeto.temperatura + "<b> NOMBRE </b>" + objeto.nombre + "<b> RADDIO </b>" + 
+				objeto.obtenerRadio(objeto.diametro) + "<b> TEMPERATURA  FARENHEIT </b>" + objeto.obtenerTemperaturaFarenheit(objeto.temperatura) + "</br>");
+				
+				
+			}
+		</script>
+	</body>
+</html>

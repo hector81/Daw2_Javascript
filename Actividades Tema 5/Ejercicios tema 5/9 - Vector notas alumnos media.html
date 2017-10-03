@@ -1,0 +1,47 @@
+<!-- 
+9.	Crea un vector que almacene en cada elemento a un alumno, con su nombre, apellidos, número de expediente, y un campo con la nota
+ de las tres evaluaciones y su media. Imprimir por pantalla el nombre y las notas de los alumnos.
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 9  </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function Alumno(nombre_n,apellido_n,numeroexpediente_n,asignatura1_n, nota1_n, asignatura2_n, nota2_n, asignatura3_n,nota3_n){
+				this.nombre = nombre_n;
+				this.apellido = apellido_n;
+				this.numeroexpediente = numeroexpediente_n;
+				this.asignatura1 = asignatura1_n;
+				this.nota1 = nota1_n;
+				this.asignatura2 = asignatura2_n;
+				this.nota2 = nota2_n;
+				this.asignatura3 = asignatura3_n;
+				this.nota3 = nota3_n;
+				this.mediaN = 0;
+			}
+			var alumnosArray = new Array(3);
+			
+			alumnosArray[0] = new Alumno("Hector","GarcíaGonzález", "001","MATEMÁTICAS",5,"HISTORI",10,"INGLES",7);
+			alumnosArray[1] = new Alumno("Isabel","MuñozGonzález", "002","MATEMÁTICAS",10,"HISTORIA",8,"INGLES",9);
+			alumnosArray[2] = new Alumno("Angel","MunillaSaez", "003","MATEMÁTICAs",10,"HISTORIA",5,"INGLES",7);
+			
+			//var media = 0;
+			document.write("Datos alumnos <br>");
+
+			for(var i = 0; i < alumnosArray.length; i++){
+				media =  (alumnosArray[i].nota1 + alumnosArray[i].nota2 + alumnosArray[i].nota3)/3; 
+				alumnosArray[i].mediaN = media;
+				document.write(alumnosArray[i].nombre + " " + alumnosArray[i].apellido + " " + alumnosArray[i].numeroexpediente + " " + alumnosArray[i].asignatura1 + " " + alumnosArray[i].nota1
+				+ " " + alumnosArray[i].asignatura2 + " " + alumnosArray[i].nota2 + " " + alumnosArray[i].asignatura3 + " " + alumnosArray[i].nota3	+ " <br>");
+				document.write("La media es" + alumnosArray[i].mediaN + " <br>");
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

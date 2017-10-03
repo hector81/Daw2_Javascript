@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio Manipular arrays  </title>		
+	</head>
+	<body>
+		<h1>Manipular arrays</h1>
+		<form name="miFormulario">
+			<h2>Introduce un texto:</h2>
+			<textarea name="textoArea"></textarea>
+			</br>
+			</br>
+			<input type="button" value="Púlsame" name="miBoton" onClick="datosTexto()">
+		</form>
+
+		<script type="text/javascript">
+			
+		  function datosTexto() {
+
+			var array_palabras = new Array();
+			var ventana;
+			var numero_palabras
+		  
+			array_palabras=miFormulario.textoArea.value.split(" "); 
+			numero_palabras=array_palabras.length;
+
+			ventana=window.open("", "ventana", "top=150,bottom= 150, left=400,width=300,height=300,resizable=yes"); 
+			ventana.document.write("<title>Manipular arrays</title>");
+			
+			ventana.document.write("Primera palabra : ");
+			ventana.document.write(array_palabras[0].bold());
+			ventana.document.write("</br>Última palabra : ");
+			ventana.document.write(array_palabras[numero_palabras-1].bold());
+			ventana.document.write("</br>Número de palabras : ");
+			ventana.document.write(numero_palabras);
+			ventana.document.write("</br>Ordenadas alfabeticamente</br>");
+			ventana.document.write(array_palabras.sort().join("-").bold());
+
+		  }
+			
+		</script>
+	</body>
+</html>

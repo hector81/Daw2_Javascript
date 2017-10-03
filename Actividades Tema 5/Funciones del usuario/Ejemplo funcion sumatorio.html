@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio . </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+		var numero = prompt("Introduce numero ");
+		
+		function sumatorio(numero){
+			if (numero==0) return 0;
+		else return numero + sumatorio(numero-1);
+		}
+		
+		document.write(sumatorio(numero));
+			
+		</script>
+	</body>
+</html>

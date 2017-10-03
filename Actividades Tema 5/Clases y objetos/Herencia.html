@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio  herencia </title>	
+		<script type="text/javascript">
+	
+			
+		</script>
+	</head>
+	<body>
+		<h1>Herencia</h1>
+		<script type="text/javascript">
+		function Persona(){
+		//define la pseudoclase Persona
+		//metodo camina
+		Persona.prototype.camina = function(){
+		alert("Persona caminando");}
+		//metodo saluda
+		Persona.prototype.saluda = function(){
+		alert("Persona saludando");}
+		}
+		function Alumno(){
+		//define la pseudoclase Alumno
+		}
+		//se define la herencia
+		Alumno.prototype = new Persona(); //Alumno hereda de Persona
+		//reemplazamos el método saluda
+		Alumno.prototype.saluda = function(){ alert("Hola, soy alumno");}
+		//Añadimos el método seDespide
+		Alumno.prototype.seDespide = function(){alert("Alumno dice adiós");}
+		//Creamos instancia del objeto Alumno
+		var alumno1 = new Alumno();
+		alumno1.saluda(); //metodo reemplazado
+		alumno1.camina(); //metodo heredado de Persona
+		alumno1.seDespide(); //metodo agregado a la pseudoclase Alumno
+		//comprueba la herencia
+		alert(alumno1 instanceof Persona); //true
+		alert(alumno1 instanceof Alumno); //true
+		</script>
+
+		
+	</body>
+</html>

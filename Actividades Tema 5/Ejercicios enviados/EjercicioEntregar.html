@@ -1,0 +1,208 @@
+<!-- Como especialista que eres en tareas administrativas te han propuesto añadir a tu web la gestión de socios del club de futbol de tu
+ localidad. Deberás hacer uso de todo lo aprendido en esta unidad para ser capaz de trabajar con este tipo de datos. Necesitarás crear una
+ página con gestión de socios de la asociación deportiva.
+El responsable te ha facilitado una lista con los datos que deben almacenarse de cada socio, así como las operaciones para modificar estos
+ datos:
+1.	Datos del socio: 
+	Número de socio.
+	DNI.
+	Nombre.
+	Apellidos.
+	Fecha de nacimiento.
+	Localidad.
+
+
+2.	Operaciones con datos de socios:
+	Alta de un nuevo socio.
+	Baja de un socio (por el número de socio o por DNI).
+	Modificar la localidad del socio.
+	Mostrar todos los socios en una tabla (el orden es irrelevante). Además, la tabla incluirá una última columna llamada Categoría, así que 
+deberás incluir una función que, dada la fecha de nacimiento del socio (se la pasas por parámetro) devuelva (return) el nombre de la categoría 
+a la que pertenece.
+	Buscar un socio a partir de su DNI o de su nombre y apellidos y mostrar sus datos.
+	Buscar todos los socios de una categoría (debes crear una función que, dada una categoría, devuelva un año de nacimiento; y después, mostrar 
+todos los socios que nacieron ese año).
+	Dada una localidad, mostrar una lista con todos los socios de esa localidad.
+
+. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio Socios club deportivo</title>	
+		<script type="text/javascript">
+			
+			//constructor con parametros
+			function Socio(numeroSocio_n,dni_n,nombre_n,apellidos_n,fechaNacimiento_n, localidad_n){
+				this.numeroSocio = numeroSocio_n;
+				this.dni = dni_n;
+				this.nombre =nombre_n;
+				this.apellidos =apellidos_n;
+				this.fechaNacimiento =fechaNacimiento_n;
+				this.localidad =localidad_n;
+				
+				//Socio.prototype.toString = function () {
+				//	return "Nombre: " + this.nombre + " Apellidos: " + this.apellidos + " dni: " + this.dni + " Nº sicio: " + this.numero
+				//			+ " Nacimiento: " + this.fechaNacimiento + " Localidad: " + this.localidad;
+				//};
+				
+			}//fin del constructor
+			
+			//constructor sin parametros
+			function Club(){
+				this.arraySocios = [];
+				
+				//1-Alta de un nuevo socio.
+				this.altaSocio = function altaSocio(socio){
+						this.arraySocios.push(socio);
+						document.write("Cliente dado de alta <br>");
+					}
+				//2-	Baja de un socio (por el número de socio o por DNI).
+				this.bajaSocio = function (dni){
+					posicion = 0;
+					for (i=0;i<this.arraySocios.length;i++) {
+						if(this.arraySocios[i].dni == dni){
+							posicion = i;
+							break;
+						}
+					}
+					document.write("Cliente dado de baja <br>");
+					this.arraySocios.splice(posicion,1);
+				}
+				
+				//3-	Modificar la localidad del socio.
+				this.modificarLocalidadSocio= function(dni, localidadNueva){
+					posicion = 0;
+					for (i=0;i<this.arraySocios.length;i++) {
+						if(this.arraySocios[i].dni == dni){
+							posicion = i;
+							break;
+						}
+					}
+					this.arraySocios[posicion].localidad = localidadNueva;
+					document.write("Localidad cambiada <br>");
+				}
+				
+				
+				//4-	Mostrar todos los socios en una tabla (el orden es irrelevante). Además, la tabla incluirá una última columna llamada Categoría, así que 
+				//deberás incluir una función que, dada la fecha de nacimiento del socio (se la pasas por parámetro) devuelva (return) el nombre de la categoría 
+				//a la que pertenece.
+				this.mostrarSocios = function () {//Mostrar todos los socios
+					for (var i = 0; i < this.arraySocios.length; i++) {
+						document.write("Nombre: " + this.arraySocios[i].nombre + " Apellidos: " + this.arraySocios[i].apellidos + " dni: " + this.arraySocios[i].dni + " Nº sicio: " + this.arraySocios[i].numeroSocio
+							+ " Nacimiento: " + this.arraySocios[i].fechaNacimiento + " Localidad: " + this.arraySocios[i].localidad + "<br>");
+					}
+				};
+				
+				//5-	Buscar un socio a partir de su DNI o de su nombre y apellidos y mostrar sus datos.
+				this.mostrarSocioDni = function(dni){
+					posicion = 0;
+					for (var i=0;i<this.arraySocios.length;i++) {
+						if(this.arraySocios[i].dni == dni){
+							posicion = i;
+							break;
+						}
+					}
+					var socio = this.arraySocios[posicion];
+					for(propiedad in socio){
+						document.write(propiedad + " " + socio[propiedad] + "<br>");
+					}
+				}
+
+					
+				//6-	Buscar todos los socios de una categoría (debes crear una función que, dada una categoría, devuelva un año de nacimiento; y después, mostrar 
+				//todos los socios que nacieron ese año).
+				this.Categoria = function (nacimiento) {//calsificar socios por categorias segun su edad
+					var actual = new Date();
+					var edad = actual.getFullYear() - nacimiento;
+					if (edad < 18) {
+						return "Menor de edad";
+					} else if (edad > 17 && edad < 66) {
+						return "Mayor de edad";
+					} else {
+						return "Jubilado";
+					}
+				};
+
+				this.mostrarCategoria = function (categoria) {//Mostrar socios de esa categoria
+					var bool= false;
+					for (var i = 0; i < this.arraySocios.length; i++) {
+						if (this.Categoria(this.arraySocios[i].fechaNacimiento) == categoria) {
+							document.write("Nombre: " + this.arraySocios[i].nombre + " Apellidos: " + this.arraySocios[i].apellidos + " dni: " + this.arraySocios[i].dni + " Nº sicio: " + this.arraySocios[i].numeroSocio
+							+ " Nacimiento: " + this.arraySocios[i].fechaNacimiento + " Localidad: " + this.arraySocios[i].localidad +  " Categoria: " + categoria + "<br>");
+							bool = true;
+						}
+					}
+					if(bool == false){
+						document.write("No hay socios de esa categoria<br>");
+					}
+				};
+				
+				//7	Dada una localidad, mostrar una lista con todos los socios de esa localidad.
+				this.mostrarSocioLocalidad = function(localidad){
+				for (i=0;i<this.arraySocios.length;i++) {
+					if(this.arraySocios[i].localidad == localidad){
+						socio = this.arraySocios[i];
+							for(propiedad in socio){
+								document.write(propiedad + " " + socio[propiedad] + "<br>");
+							}
+						}
+					}			
+				}
+				
+
+				
+
+			}//fin del constructor	
+			
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var club = new Club();	
+			var socio1 = new Socio("1", "11111111", "Héctor", "Garcia", 1981, "logroño");
+			var socio2 = new Socio("2", "22222222", "Isabel", "Rodriguez", 1985, "logroño");
+			var socio3 = new Socio("3", "33333333", "Angel", "Sanchez", 1990, "logroño");
+			var socio4 = new Socio("4", "44444444", "Antonio", "Ramos", 1970, "Lardero");
+			var socio5 = new Socio("5", "55555555", "Pedro", "Gonzalez", 1999, "logroño");
+			var socio6 = new Socio("6", "66666666", "Sancho", "Ramos", 2010, "Lardero");
+			var socio5 = new Socio("7", "77777777", "Pedro", "Gonzalez", 1940, "logroño");
+			//añadir 
+			document.write("<b>DAR DE ALTA CLIENTES</b><br>");
+			club.altaSocio(socio1);
+			club.altaSocio(socio2);
+			club.altaSocio(socio3);
+			club.altaSocio(socio4);
+			club.altaSocio(socio5);
+			//mostrar SOCIOS lardero
+			document.write("<b>ENSEÑAR SOCIOS DE LARDERO</b><br>");
+			club.mostrarSocioLocalidad("Lardero");
+			document.write("<b>MOSTRAR TODOS LOS SOCIOS</b><br>");
+			//moStrar
+			club.mostrarSocios();
+			//modificar localidad por dni
+			document.write("<b>MODIFICAR LA LOCALIDAD DE 22222222</b><br>");
+			club.modificarLocalidadSocio("22222222", "Calahorra");
+			//moStrar
+			document.write("<b>MOSTRAR TODOS LOS SOCIOS</b><br>");
+			club.mostrarSocios();
+			//borrar socio por su dni
+			document.write("<b>BORRAR DNI 55555555</b><br>");
+			club.bajaSocio("55555555");
+			//motrar
+			document.write("<b>MOSTRAR TODOS LOS SOCIOS</b><br>");
+			club.mostrarSocios();
+			//mostrar socios por dni
+			document.write("<b>MOSTRAR socio DNI 11111111</b><br>");
+			club.mostrarSocioDni("11111111");
+			//mostrar por categorias
+			document.write("<b>MOSTRAR SOCIO MAYOR DE EDAD</b><br>");
+			club.mostrarCategoria("Mayor de edad");
+			document.write("<b>MOSTRAR SOCIO MENOR DE EDAD</b><br>");
+			club.mostrarCategoria("Menor de edad");
+			document.write("<b>MOSTRAR SOCIOS JUBILADOS</b><br>");
+			club.mostrarCategoria("Jubilado");
+			
+		</script>
+	</body>
+</html>

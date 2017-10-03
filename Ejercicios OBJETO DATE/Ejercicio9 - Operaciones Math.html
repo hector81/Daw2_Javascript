@@ -1,0 +1,98 @@
+<!-- 9. Crea una página web con el siguiente aspecto:
+	Elige la operación que deseas hacer:
+		1.Cálculo del valor absoluto de un número .
+		2.Cálculo del arco tangente de un número .
+		3.Redondeo a su inmediato superior de un número .
+		4.Redondeo a su inmediato inferior de un número .
+		5.Redondeo al número más cercano .
+		6.Calculo del exponencial de un número .
+		7.Calculo del logaritmo de un número .
+		8.Calculo del número máximo entr dos dados .
+		9.Calculo del número mínimo entr dos dados .
+		10.Calculo de un número elevado a otro .
+		11.Número aleatorio entre 0 y 1 .
+		12.Calculo de la raíz cuadrada de un número .
+		
+		Se debe solicitar al usuario la operación que se va a realizar y los operandos necesarios
+		según la opción elegida, así como calcular el resultado de la operación y mostrar el resultado.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 9 : Crea una página web con el siguiente aspecto:</title>
+
+	</head>
+	<body>
+		<p>Elige la operación que deseas hacer:</p>
+			<p>1.Cálculo del valor absoluto de un número .</p>
+			<p>2.Cálculo del arco tangente de un número .</p>
+			<p>3.Redondeo a su inmediato superior de un número .</p>
+			<p>4.Redondeo a su inmediato inferior de un número .</p>
+			<p>5.Redondeo al número más cercano .</p>
+			<p>6.Calculo del exponencial de un número .</p>
+			<p>7.Calculo del logaritmo de un número .</p>
+			<p>8.Calculo del número máximo entre dos dados .</p>
+			<p>9.Calculo del número mínimo entre dos dados .</p>
+			<p>10.Calculo de un número elevado a otro .</p>
+			<p>11.Número aleatorio entre 0 y 1 .</p>
+			<p>12.Calculo de la raíz cuadrada de un número .</p>
+		<script type="text/javascript">
+			var opcion = prompt("Introduce la opción elegida : ");
+			
+			if(opcion == 1){
+				var numero = prompt("Pon un numero");
+				var numeroAbsoluto = Math.abs(numero);
+				document.write("El valor absoluto del número " + numero + " es " + numeroAbsoluto);
+			}else if(opcion == 2){ 
+				var numero = prompt("Pon un numero");
+				var arcoTangente = Math.atan(numero);
+				document.write("El arco tangente del número " + numero + " es " + arcoTangente);
+			}else if(opcion == 3){
+				var numero = prompt("Pon un numero");
+				var redondeoMayor = Math.ceil(numero);
+				document.write("El redondeo superior del número " + numero + " es " + redondeoMayor);
+			}else if(opcion == 4){
+				var numero = prompt("Pon un numero");
+				var redondeoMenor = Math.round(numero);
+				document.write("El redondeo inferior del número " + numero + " es " + redondeoMenor);
+			}else if(opcion == 5){
+				var numero = prompt("Pon un numero");
+				var redondeoCercano = Math.round(numero);
+				document.write("El redondeo al número más cercano del número " + numero + " es " + redondeoCercano);
+			}else if(opcion == 6){
+				var numero = prompt("Pon un numero");
+				var exponencial = prompt("Pon un numero");
+				var numeroExponencial = Math.pow(numero, exponencial);
+				document.write("El valor del número " + numero + " con el exponencial " + exponencial + " es " + numeroExponencial);
+			}else if(opcion == 7){
+				var numero = prompt("Pon un numero");
+				var logaritmo = Math.log(numero);
+				document.write("El logaritmo del número " + numero + " es " + logaritmo);
+			}else if(opcion == 8){
+				var numero1 = prompt("Pon un numero");
+				var numero2 = prompt("Pon otro numero");
+				var mayor = Math.max( numero1, numero2);
+				document.write("El mayor de los números es " + mayor);
+			}else if(opcion == 9){
+				var numero1 = prompt("Pon un numero");
+				var numero2 = prompt("Pon otro numero");
+				var menor = Math.min( numero1, numero2);
+				document.write("El menor de los números es " + menor);
+			}else if(opcion == 10){
+				var numero1 = prompt("Pon un numero");
+				var numero2 = prompt("Pon otro numero para elevarlo");
+				var numeroElevado = Math.pow(numero1, numero2);
+				document.write("El valor del número " + numero1 + " elevado al número " + numero2 + " es " + numeroElevado);
+			}else if(opcion == 11){
+				var aleatorio = Math.random();
+				document.write("Número aleatorio entre 0 y 1:  " + aleatorio);
+			}else if(opcion == 12){
+				var numero = prompt("Pon un numero");
+				var numeroRaiz = Math.sqrt(numero);
+				document.write("La raiz cuadrada del número " + numero + " es " + numeroRaiz);
+			}
+	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Actividad 6  </title>		
+	</head>
+	<body>
+		<h1>Actividad 6</h1>
+		<h2>Teinda de informática</h2>
+		<h3>Selecciona un objeto: </h3>
+		<form>
+			<input type="radio" id="pc1"  onclick="crearObjeto()" />ASUS,AMD Athlon X3,4GB DDR3
+			<br />
+			<input type="radio" id="pc2"  onclick="crearObjeto()" />Packard Bell,Intel Core i5-2320, 4GB DDR3
+			<br />
+			<input type="radio" id="pc3"  onclick="crearObjeto()"/>Innobo,Intel Core i3-2100,2GB DDR2
+		</form>
+		<script type="text/javascript">
+			
+			//Constructor sin parámetros:
+			function Ordenador(marca,cpu,memoria){
+				this.marca = marca;
+				this.cpu = cpu;
+				this.memoria = memoria;
+			}
+
+			 var pc1 = new Ordenador("ASUS","AMD Athlon X3","4GB DDR3");
+            var pc2 = new Ordenador("Packard Bell","Intel Core i5-2320","4GB DDR3");
+            var pc3 = new Ordenador("ASUS","Intel Core i3-2100","2GB DDR2");
+
+			//Creamos los objetos Instanciamos los objetos
+			function crearObjeto(){
+				 if (document.getElementById("pc1").checked == true) {
+                    document.write("El que seleccionaste es: "+pc1.marca + " con cpu " + pc1.cpu + " y memoria " + pc1.memoria);
+                }else if(document.getElementById("pc2").checked == true){
+                    document.write("El que seleccionaste es: "+pc2.marca + " con cpu " + pc2.cpu + " y memoria " + pc2.memoria);
+                }else if(document.getElementById("pc3").checked == true){
+                    document.write("El que seleccionaste es: "+pc3.marca + " con cpu " + pc3.cpu + " y memoria " + pc3.memoria);
+                }
+					
+			}
+			
+			function devolverSeparado(ordeN) {
+				var res = str.split(" ");
+				document.getElementById("demo").innerHTML = res;
+			}
+		
+			crearObjeto(x);
+			
+			
+		</script>
+	</body>
+</html>

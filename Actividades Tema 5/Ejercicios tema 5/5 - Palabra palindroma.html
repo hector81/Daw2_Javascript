@@ -1,0 +1,42 @@
+<!-- 5- 5.	Crea una función en javascript que indique si una palabra es palíndroma o no, la palabra se almacena en un array. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 5 palabra palindroma  </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var palabra = "";
+			
+			
+			palabra = prompt("Introduce palabra");
+			
+			function esPalabraPalindroma(palabra){
+				var condition= false;
+				var arrayPalabras = new Array();
+				var contador=0;
+				//recorremos la palabra y la metemos en el array
+				for(var i = palabra.length; i >= 0; i--){
+					arrayPalabras[contador]= palabra.charAt(i);
+					contador++;
+				}
+				//creamos la palabra nueva
+				var palabraNueva = "";
+				for(var i =0; i < arrayPalabras.length; i++){
+					palabraNueva += arrayPalabras[i];
+				}
+				document.write(palabra + "<br>");
+				document.write(palabraNueva + "<br>");
+				
+				if(palabraNueva == palabra){
+					condition = true;
+				}
+				return condition;
+			}
+			
+			document.write(esPalabraPalindroma(palabra));
+			
+		</script>
+	</body>
+</html>

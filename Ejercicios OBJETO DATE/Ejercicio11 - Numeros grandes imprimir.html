@@ -1,0 +1,59 @@
+<!-- Ejercicio 11: Crear una página web donde se ejecute el siguiente código JavaScript y analízalo comnetando resultados: -->
+<!--
+			var bacterias = 3.55;
+			var texto = 'bacterias en la probeta';
+			var numeroInfinito = Infinity;
+			document.write("<br>La variable bacterias vale : " + bacterias);
+			bacterias = 3.55E5;
+			document.write("<br>La variable bacterias vale (multiplicamos por 100000) : " + bacterias);
+			bacterias = 3.55E-5;
+			document.write("<br>La variable bacterias ahora es un número muy pequeño : " + bacterias);
+			document.write("<br>La variable bacterias ahora es un número (operacion sin sentido) : " + bacterias);
+			bacterias = 3.55Ee100000000000000000;
+			document.write("<br>La variable bacterias ahora es demasiado grande : " + bacterias);
+			bacterias = 3.55E-100000000000000000;
+			document.write("<br>La variable bacterias ahora es demasiado pequeña : " + bacterias);
+			document.write("<br>Un número positivo dividido entre cero (indeterminación matemática) : " + (4/0));
+			document.write("<br>Un número negativo dividido entre cero (indeterminación matemática) : " + (-4/0));
+			document.write("<br>Cero dividido entre cero devuelve) : " + (0/0));
+			document.write("<br>La variable numeroInfinito vale : " + numeroInfinito);
+			var diezCentimos = .1;
+			var veinteCentimos = .2;
+			var treintaCentimos = .3;
+			document.writeln("<br>Esperamos 0.1 y lo obtenemos : " + (veinteCentimos/diezCentimos));
+			document.writeln("<br>Esperamos 0.1 y no lo obtenemos : " + (treintaCentimos/veinteCentimos));
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 11: Crear una página web donde se ejecute el siguiente código JavaScript y analízalo comnetando resultados: </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var bacterias = 3.55;//ESTO ESTA CORRECTO
+			var texto = 'bacterias en la probeta';//ESTO ESTA CORRECTO
+			var numeroInfinito = Infinity;
+			document.write("<br>La variable bacterias vale : " + bacterias); //ESTO ESTA CORRECTO
+			bacterias = 3.55E5;//ESTO ESTA CORRECTO Y LO MULTIPLICA POR 1000
+			document.write("<br>La variable bacterias vale (multiplicamos por 100000) : " + bacterias);//ESTO ESTA CORRECTO
+			bacterias = 3.55E-5;//ESTO ESTA CORRECTO Y LO DIVIDE POR 10000000000
+			document.write("<br>La variable bacterias ahora es un número muy pequeño : " + bacterias);//ESTO ESTA CORRECTO
+			document.write("<br>La variable bacterias ahora es un número (operacion sin sentido) : " + bacterias);//ESTO ESTA CORRECTO
+			//bacterias = 3.55Ee100000000000000000; //ESTO LO MULTIPLICA
+			//document.write("<br>La variable bacterias ahora es demasiado grande : " + bacterias);//DEMASIADO GRANDE PARA IMPRIMIRO
+			//bacterias = 3.55E-100000000000000000;//ESTO LO DIVIDIRIA 
+			//document.write("<br>La variable bacterias ahora es demasiado pequeña : " + bacterias);//DEMASIADO PEQUEÑO PARA IMPRIMIR
+			document.write("<br>Un número positivo dividido entre cero (indeterminación matemática) : " + (4/0));// DA Infinity
+			document.write("<br>Un número negativo dividido entre cero (indeterminación matemática) : " + (-4/0));// DA -Infinity
+			document.write("<br>Cero dividido entre cero devuelve) : " + (0/0));// DA NaN
+			document.write("<br>La variable numeroInfinito vale : " + numeroInfinito);// DA Infinity
+			var diezCentimos = .1;
+			var veinteCentimos = .2;
+			var treintaCentimos = .3;
+			document.writeln("<br>Esperamos 0.1 y lo obtenemos : " + (veinteCentimos/diezCentimos));// DA  2
+			document.writeln("<br>Esperamos 0.1 y no lo obtenemos : " + (treintaCentimos/veinteCentimos));// DA 1.4999999999999998
+		</script>
+	</body>
+</html>

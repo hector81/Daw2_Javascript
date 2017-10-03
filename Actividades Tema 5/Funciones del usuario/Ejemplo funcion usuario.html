@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio . </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			//variables globales
+			var chica = "Maria";
+			var perros = "Bat, Samba y Black";
+			
+			function demo(){
+				var chica = "Sonia"; //vble. Local
+				document.write("<br>" + perros + " no pertenecen a " + chica + ".");
+			}
+			//llamamos a la función para usar las variables locales
+			demo();
+			document.write("<br>" + perros + " pertenecen a " + chica + ".");
+			
+		</script>
+	</body>
+</html>

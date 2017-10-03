@@ -1,0 +1,44 @@
+<!-- 3.	Crea un script que defina un objeto llamado Alimentos. Este objeto debe presentar las propiedades código, nombre y precio, 
+además del método imprimeDatos, el cual escribe por pantalla los valores de sus propiedades. Posteriormente, crea tres instancias
+ del objeto y guardarlas en un array. Con la ayuda del bucle for, utiliza el método imprimeDatos para mostrar por pantalla los
+ valores de los tres objetos instanciados. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 3 </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			//constructores con parametros
+			function Alimento(codigo_n,nombre_n,precio_n){
+				this.codigo = codigo_n;
+				this.nombre = nombre_n;
+				this.precio = precio_n;
+			}
+			
+			//crear 3 instancias
+			var alimento1 = new Alimento(1,"Verdura",3);
+			var alimento2 = new Alimento(2,"Carne",19);
+			var alimento3 = new Alimento(3,"Pescado",14);
+			
+			function imprimeDatos(objeto){
+				for (propiedad in objeto){
+					document.write("<b> " + propiedad + " </b>"  + objeto[propiedad] + "</br>");
+				}
+			}
+			
+			var arrayAlimentos = [alimento1,alimento2,alimento3];
+			var contador =1;
+			
+			for(var i = 0;i<arrayAlimentos.length;i++){
+				document.write("Alimento " + contador + "<br>");
+				imprimeDatos(arrayAlimentos[i]);
+				contador++;
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

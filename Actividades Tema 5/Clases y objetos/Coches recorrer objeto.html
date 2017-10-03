@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio   </title>	
+		<script type="text/javascript">
+			//“Constructor” con parámetros:
+			function Coche(marca_in,modelo_in,color_in,cantidad_in)
+			{
+				this.marca = marca_in;
+				this.modelo = modelo_in;
+				this.color = color_in;
+				this.cantidad = cantidad_in;
+			}		
+			
+		</script>
+	</head>
+	<body>
+		<h1>Coches</h1>
+		<script type="text/javascript">
+			var miCoche = new Coche("Kia","Ceed","Blanco",40);
+			
+			document.write("Mi coche tiene las siguientes caracteristicas </br>");
+		
+				for(var miPropiedad in miCoche){
+					document.write("<b>" + miPropiedad + "</b>" +  miCoche[miPropiedad] + " </br>");
+				}
+			
+		</script>
+
+		
+	</body>
+</html>

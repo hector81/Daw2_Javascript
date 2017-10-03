@@ -1,0 +1,26 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio  </title>
+		
+	</head>
+	<body>
+		<form id="multiplicar">
+		  <input type="text" id="multiplicando" value="" onChange="multiplicar();"> X
+		  <input type="text" id="multiplicador" value="" onChange="multiplicar();"> =
+		  <input type="button" value="MULTIPLICAR" onclick="igualar()" />
+		  <input type="text" id="resultado">
+		</form>
+		<script type="text/javascript">
+
+			function multiplicar(){
+			  m1 = document.getElementById("multiplicando").value;
+			  m2 = document.getElementById("multiplicador").value;
+			  r = m1*m2;
+			  document.getElementById("resultado").value = r;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- 7.	Crea un script de herencia que cumpla con los siguientes requisitos:
+a)	Un médico especialista tiene una especialidad y es un tipo de Médico.
+b)	Un Médico trabaja en un centro de trabajo y es un tipo de Persona.
+c)	Una Persona tiene un nombre y una nacionalidad. Como método común a todas las personas tenemos mostrarNacionalidad, que muestra un mensaje informando de la 
+nacionalidad.
+
+Se desea crear un objeto de tipo MedicoEspecialista pasándole como parámetros para su creación además de sus propiedades intrínsecas, las propiedades 
+que hereda de sus supertipos y sobre este objeto invocar el método mostrarNacionalidad(), que deberá ser reconocido por herencia.
+
+
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 7 </title>	
+		<script type="text/javascript">
+			//constructor
+			function Persona(nombre_n, nacionalidad_n){
+				this.nombre = nombre_n;
+				this.nacionalidad = nacionalidad_n;
+			}
+			
+			
+			//constructor
+			function Medico(nombre, nacionalidad, centroTrabajo_n){
+				Persona.call(this, nombre, nacionalidad);
+				this.centroTrabajo = centroTrabajo_n;
+			}
+			
+			//constructor
+			function MedicoEspecialista(nombre, nacionalidad,centroDeTrabajo ,especialidad_n){
+				Medico.call(this, nombre, nacionalidad, centroDeTrabajo);
+				this.especialidad = especialidad_n;
+			}
+
+			
+			Medico.prototype = new Persona();
+			MedicoEspecialista.prototype = new Medico();
+
+			var medico1 = new MedicoEspecialista('Hector','Española','San Pedro','Ortopedia');
+			
+			for (propiedad in medico1){
+					document.write("<b> " + propiedad + " </b>"  + medico1[propiedad] + "</br>");
+				}
+		
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

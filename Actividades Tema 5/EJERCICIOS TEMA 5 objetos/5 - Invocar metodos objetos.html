@@ -1,0 +1,74 @@
+<!-- 5.	Crea en un script dos funciones externas: mostrarNombre que muestre, mediante alert, el nombre de cualquier objeto pasado; y verNombreYsexo 
+que muestre el nombre y sexo del objeto pasado. 
+A continuación crea las pseudoclases siguientes con los atributos:
+•	Persona (dni, nombre, apellidos, sexo)
+•	Empresa (cif, nombre, sector, nº trabajadores)
+•	Mascota (nombre, raza, sexo)
+•	EquipoFutbol (nombre, entrenador, ligas_ganadas)
+Una vez creadas las definiciones anteriores, crea una instancia de cada objeto. Después, invoca mediante el método predefinido de JavaScript call,
+ la función mostrarNombre para los objetos Empresa y EquipoFutbol y para los objetos Persona y Mascota invoca mediante apply la función verNombreYsexo.
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 5 </title>	
+		<script type="text/javascript">
+			//constructor con parametros
+			function Persona(dni_n, nombre_n, apellidos_n, sexo_n){
+				this.dni = dni_n;
+				this.nombre = nombre_n;
+				this.apellidos = apellidos_n;
+				this.sexo= sexo_n;
+			}
+			
+			//constructor con parametros
+			function Empresa(cif_n, nombre_n, sector_n, numTrab_n){
+				this.cif = cif_n;
+				this.nombre = nombre_n;
+				this.sector = sector_n;
+				this.numTrab = numTrab_n;
+			}
+			
+			//constructor con parametros
+			function Mascota(nombre_n, raza_n, sexo_n){
+				this.nombre = nombre_n;
+				this.raza= raza_n;
+				this.sexo = sexo_n;
+			}
+			
+			//constructor con parametros
+			function EquipoFutbol(nombre_n, entrenador_n, ligas_ganadas_n){ 
+				this.nombre = nombre_n;
+				this.entrenador = entrenador_n;
+				this.ligas_ganadas = ligas_ganadas_n;
+			}
+				  
+
+			// mostrarNombre que muestre, mediante alert, el nombre de cualquier objeto pasado;
+			function mostrarNombre(objeto){
+				return this.nombre;
+			}
+			//y verNombreYsexo que muestre el nombre y sexo del objeto pasado.
+			function verNombreYsexo(objeto){
+				return "Nombre " +this.nombre + " Sexo " + this.sexo ;
+			}
+
+			
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var persona1 = new Persona("16161616-P","Hector","Jimenez Perez", "Varon");
+			var empresa1 = new Empresa("8989898989-P","Eulen","Limpieza", 589);
+			var mascota1 = new Mascota("Perro","Pastor aleman","Hembra");
+			var equipo1 = new EquipoFutbol("Selección española","Julen Lopetegui",8);
+
+			document.write("Nombre empresa: " + mostrarNombre.call(empresa1) + "<br>");
+			document.write("Nombre equipo: " + mostrarNombre.call(equipo1) + "<br>");
+			
+			document.write("Datos persona: " + verNombreYsexo.apply(persona1) + "<br>");
+			document.write("Datos mascota: " + verNombreYsexo.apply(mascota1) + "<br>");
+		</script>
+	</body>
+</html>

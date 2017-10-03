@@ -1,0 +1,47 @@
+<!-- Realiza una página que muestre un formulario para
+la conversión de Euros a Libras y viceversa. 
+//instrucciones 1 euro = 0,897420887 libras esterlinas británicas
+1 libra esterlina británica = 1,11430435 euros
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<html>
+	<head>
+		<title>Invocar función desde JavaScript</title>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<script type="text/javascript">
+			var libras = document.getElementById("libras");		
+			var euros = document.getElementById("euros");
+			
+			function convertirEurosALibras(){	
+				rlibras = 0;
+				rlibras = (parseFloat(euros/0.897420887));
+				document.getElementsByName("resultadoLibras")[0].value = rlibras;
+			}
+			function convertirLibrasAEuros(){
+				reuros = 0;
+				reuros = (parseFloat(libras/1.11430435));
+				document.getElementsByName("resultadoEuros")[0].value = reuros;
+			}
+			function vaciarCampos(){
+				document.getElementsByName("libras")[0].value = "";
+				document.getElementsByName("euros")[0].value = "";
+				document.getElementsByName("resultadoEuros")[0].value = "";
+				document.getElementsByName("resultadoLibras")[0].value = "";
+			}
+		</script>
+	</head>
+<body>
+	Pon libras <input type="text" value="" id="libras">
+	<input type="button" value="convertir Libras a Euros" onclick="convertirLibrasAEuros()"></br></br></br>
+	Resultado valor de libras en euros <input type="text" value="" name="resultadoEuros" id="resultadoEuros"></br></br></br>
+	
+	Pon euros <input type="text" value="" id="euros">
+	<input type="button" value="convertir Euros a Libras" onclick="convertirEurosALibras()"></br></br></br>
+	Resultado valor de libras en euros <input type="text" value="" name="resultadoLibras" id="resultadoLibras"></br></br></br>
+	
+	<input type="button" value="Vaciar Campos" onclick="vaciarCampos()"></br></br></br>
+
+</body>
+</html>
+	
+		

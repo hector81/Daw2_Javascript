@@ -1,0 +1,30 @@
+<!-- Ejercicio 22 OBJETO WINDOW: realiza un script que abra una ventana en la posición 0,0 de la pantalla de tamaño 200x300px. La nueva ventana debe contener dos 
+botones, uno para mover la ventana a la posición 200,200 y el otro para cerrarla.
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 22: Crea un vínculo a una página denominada home.htm </title>
+		
+	</head>
+	<body>
+		<h1>Abrir y mover ventanas</h1>
+		<br>
+		<input type="button" value="Crear nueva ventana" onclick="abrir()">
+		<script type="text/javascript">	
+			var miVentana;
+		
+			function abrir(){
+				miVentana = window.open( "", "miVentana", "top=600,bottom= 300, left=400,width=300,height=300,resizable=yes" );//resizable para redimensionar la ventana
+				miVentana.document.write('Mover la ventana a las coordenadas 200.200 de la pantalla<br>');
+				miVentana.document.write('<button onclick="moveBy(200, 200)">Mover</button>');
+				miVentana.document.write('<button onclick="window.close()">Cerrar</button>');	
+
+			}
+	
+					
+		</script>
+	</body>
+</html>

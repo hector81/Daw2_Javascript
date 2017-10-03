@@ -1,0 +1,53 @@
+<!-- 4.	Crea la pseudoclase Cliente para un banco, con los atributos: nombre, apellidos y saldo. Se han de implementar los métodos: constructor,
+ será la propia definición del objeto cliente, y realizará la inicialización de los atributos del objeto; depositar, realiza un ingreso en
+ su cuenta; extraer, realiza una extracción de saldo de su cuenta. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 4 </title>	
+		<script type="text/javascript">
+			//constructor sin parametros
+			function Cliente(nombre_n, apellidos_n, saldo_n){
+				this.nombre = nombre_n;
+				this.apellidos = apellidos_n;
+				this.saldo = saldo_n;
+				this.depositar=depositar;
+				this.extraer=extraer;
+			}
+
+			//realiza un ingreso en su cuenta
+			function depositar(cantidad){
+				this.saldo = this.saldo+cantidad;
+			}
+			//realiza una extracción de saldo de su cuenta
+			function extraer(cantidad){
+				this.saldo = this.saldo-cantidad;
+			}
+			//imprimir datos cliente
+			function imprimeDatos(objeto){
+				for (propiedad in objeto){
+					document.write("<b> " + propiedad + " </b>"  + objeto[propiedad] + "</br>");
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var cliente1;
+			cliente1 = new Cliente("Hector","Jimenez Perez", 1500);
+			document.write("</br>DATOS DEL CLIENTE</br>");
+			document.write(cliente1.nombre + " " + cliente1.apellidos + " " + cliente1.saldo + "</br>");
+			document.write("CLIENTE EXTRAE DINERO , 500 EUROS");
+			cliente1.extraer(500);
+			document.write("</br>DATOS DEL CLIENTE</br>");
+			document.write(cliente1.nombre + " " + cliente1.apellidos + " " + cliente1.saldo + "</br>");
+			document.write("CLIENTE DEPOSITA DINERO , 700 EUROS");
+			cliente1.depositar(700);
+			document.write("</br>DATOS DEL CLIENTE</br>");
+			document.write(cliente1.nombre + " " + cliente1.apellidos + " " + cliente1.saldo + "</br>");
+			
+		</script>
+	</body>
+</html>

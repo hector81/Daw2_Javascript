@@ -1,0 +1,39 @@
+<!-- Ejercicio 23. Realiza un script que cambie el color de fondo del documento
+repetidamente cada segundo. Al cabo de 5 segundos, se ejecuta la función
+clearInterval() que detiene el proceso iniciado por setInterval().
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 23</title>
+		
+	</head>
+	<body>
+		<h1>La pantalla cambiará</h1>
+
+		
+		<script type="text/javascript">		
+			var arrayColores = ["red","green","blue","yellow","pink","purple"];
+			var contador = 0;
+
+			var myVar = setInterval(function(){ cambiarColor() }, 1000);
+			myStopFunction();
+			
+			function cambiarColor(){
+					document.body.style.backgroundColor = arrayColores[contador];
+					contador++;
+					if (contador >= 5){
+					 window.clearInterval(myVar);alert ("Finalizó el cambio de color");
+				  }
+			}
+
+			
+  
+
+			
+		</script>
+
+	</body>
+</html>

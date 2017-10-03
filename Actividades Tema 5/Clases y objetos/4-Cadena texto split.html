@@ -1,0 +1,53 @@
+<!-- Leer una cadena de texto en un formulario y generar un array con la funcion split(). Posteriormente
+, mostrar la siguiente información: Número de palabras, primera palabra, última palabra,
+ las palabras colocadas en orden inverso, las palabras ordenadas de la A a la Z y las
+palabras ordenadas de la Z a la A. Sacar toda esta información en una ventana nueva. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio manejando arrays  </title>		
+	</head>
+	<body>
+		<h1>Manejando Array´s...</h1>
+		<form name="formulario">
+			<h2>Introduce un texto:</h2>
+			<textarea name="textoArea"></textarea>
+			</br>
+			</br>
+			<input type="button" value="Púlsame" name="botonPulsar" onClick="datosTexto()">
+		</form>
+
+		<script type="text/javascript">
+			
+		  function datosTexto() {
+
+			var array_palabras = new Array();
+			var ventana;
+			var numero_palabras;
+		  
+			array_palabras = formulario.textoArea.value.split(" "); 
+			numero_palabras = array_palabras.length;
+
+			ventana=window.open("", "ventana", "top=150,bottom= 150, left=400,width=300,height=300,resizable=yes"); 
+			ventana.document.write("<title>Array´s</title>");
+			ventana.document.write("<h3>Información sobre el texto introducido...:</h3>");
+			ventana.document.write("número de palabras : ");
+			ventana.document.write(numero_palabras + "</br>");
+			ventana.document.write("primera palabra : ");
+			ventana.document.write(array_palabras[0].bold());
+			ventana.document.write("</br>última palabra : ");
+			ventana.document.write(array_palabras[numero_palabras-1].bold());
+			ventana.document.write("</br>colocadas al revés:</br>");
+			ventana.document.write(array_palabras.reverse().join("..").bold());
+			ventana.document.write("</br>ordenadas de la 'a' a la 'z':</br>");
+			ventana.document.write(array_palabras.sort().join("..").bold());
+			ventana.document.write("</br>ordenadas de la 'z' a la 'a':</br>");
+			ventana.document.write(array_palabras.sort().reverse().join("..").bold());
+			ventana.document.write("<h3>...Hecho</h3>");
+
+		  }
+			
+		</script>
+	</body>
+</html>

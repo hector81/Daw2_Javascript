@@ -1,0 +1,41 @@
+<!-- 
+7.	Dado un vector de números enteros, como por ejemplo:
+Vector = [12, 51, 8, 130, 44, 6, 23, 75, 18, 109, 5, 38, 20]
+Crea un script que devuelva otro vector con los elementos del vector anterior excluyendo los valores menores de 20. Utiliza el método filter() del objeto Array.
+
+Con filter podemos filtrar un array mediante una condición evitando así aquellos elementos que no necesitamos. Devuelve un array con los elementos que
+ cumplen con la condición. Para realizar el filtro podemos utilizar el valor de cada elemento, el índice o una combinación de ambos. 
+
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 7  </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var vector= [12, 51, 8, 130, 44, 6, 23, 75, 18, 109, 5, 38, 20];
+			
+
+			function mostrarArrayNormal(){
+				for(var i = 0; i < vector.length; i++){
+					document.write(vector[i] + " ");
+				}			
+			}
+			
+			function sinMenores20(vector) {
+				  return vector >= 10;
+				}
+			var filtrados = [12, 51, 8, 130, 44, 6, 23, 75, 18, 109, 5, 38, 20].filter(sinMenores20);
+			
+			document.write("Mostrar array normal <br>");
+			mostrarArrayNormal();
+			document.write("<br>Mostrar array excluyendo número menores de 20 <br>");
+			for(var i = 0; i < filtrados.length; i++){
+					document.write(filtrados[i] + " ");
+				}
+			
+		</script>
+	</body>
+</html>

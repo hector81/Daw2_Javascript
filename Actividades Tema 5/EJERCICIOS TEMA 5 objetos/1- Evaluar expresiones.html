@@ -1,0 +1,48 @@
+<!--  -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 1 </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fruta = {peras:3, kiwis:7, frutas:function(){return((this.peras+this.kiwis) + "frutas")} };
+			var nada = undefined;
+			var p = 'peras';
+			document.write(
+				"var fruta = {peras:3, kiwis:7, frutas:function(){return((this.peras+this.kiwis) + 'frutas')} };" + "<br>" +
+				"var nada = undefined;" + "<br>" +
+				"var p = 'peras';" + "<br>"
+			);
+			document.write("Resultados<br>");
+			document.write("fruta.peras =><br>");
+			document.write(fruta.peras + "<br>");
+			document.write("fruta.kiwis =><br>");
+			document.write(fruta.kiwis +"<br>");
+			document.write("fruta.frutas() =><br>");
+			document.write(fruta.frutas() + "<br>");
+			document.write("fruta.p	 =><br>");
+			document.write(fruta.p + "<br>");
+			document.write("fruta[p] =><br>");
+			document.write(fruta[p] + "<br>");
+			document.write("fruta['peras'] =><br>");
+			document.write(fruta['peras'] + "<br>");
+			document.write("fruta['kiwis']	 =><br>");
+			document.write(fruta['kiwis'] + "<br>");
+			document.write("fruta['fresas']	 =><br>");
+			document.write(fruta['fresas'] + "<br>");
+			document.write("nada.frutas() =><br>");
+			document.write(nada.frutas() + "<br>");
+			document.write("nada[p]	 =><br>");
+			document.write(nada[p] + "<br>");
+			document.write("nada.peras	 =><br>");
+			document.write(nada.peras + "<br>");
+			document.write("nada['kiwis']	 =><br>");
+			document.write(nada['kiwis'] + "<br>");
+			document.write("peras.frutas()		 => <br>");
+			document.write(peras.frutas() + "<br>");
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio  </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var variable1 = 7;
+			var variable2 = "7";
+			var variable3 = 8;
+			var variable4 = "8";
+			var variable5 = 6;
+			var variable6 = "6";
+			var variable7 = "67";
+			var variable8 = undefined;
+			var variable9 = false;
+			var variable10 = "false";
+			var variable11 = true;
+			var variable12 = "true";
+			
+			function fun1(x){
+				return x;
+			};
+			
+			function fun2(){
+				return + arguments[1];
+			};
+			
+			var fun3 = function (x){
+				return !x;
+			};
+			
+			var fun4 = fun2;
+
+			document.write("function fun1(x){return x;};<br>");
+			document.write("function fun2(){return + arguments[1];};<br>");
+			document.write("var fun3 = function (x){return !x;};<br>");
+			document.write("var fun4 = fun2;<br>");
+			
+			document.write("Resultados<br>");
+			document.write("fun1(7) =><br>");
+			document.write(fun1(variable1) + "<br>");
+			document.write("fun1(undefined) =><br>");
+			document.write(fun1(variable8) + "<br>");
+			document.write("fun1(7,8) =><br>");
+			document.write(fun1(variable1, variable3) + "<br>");
+			document.write("fun1() =><br>");
+			document.write(fun1() + "<br>");
+			document.write("fun2(7,8) =><br>");
+			document.write(fun2(variable1, variable3) + "<br>");
+			document.write('fun2(7,"7") =><br>');
+			document.write(fun2(variable1, variable2) + "<br>");
+			document.write('fun2(7,"8") =><br>');
+			document.write(fun2(variable1, variable4) + "<br>");
+			document.write("fun3(7) =><br>");
+			document.write(fun3(variable1) + "<br>");
+			document.write("fun3(undefined) =><br>");
+			document.write(fun3(variable8) + "<br>");
+			document.write("fun4(6,7) =><br>");
+			document.write(fun4(variable5, variable1) + "<br>");
+			document.write('fun4(7,"8") =><br>');
+			document.write(fun4(variable1, variable4) + "<br>");
+
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio Multiarray </title>
+		
+	</head>
+	<body>
+		<h1><b>I.E.S COMERCIO</b></h1>
+		<script type="text/javascript">
+			var datos = new Array();
+			datos[0] = new Array("Cristina","Seguridad",24);
+			datos[1] = new Array("Pablo","Bases de Datos",17);
+			datos[2] = new Array("Marisa","Sistemas Informáticos",28);
+			datos[3] = new Array("Luis","Redes",26);
+			
+			var datos = [
+				["Cristina","Seguridad",24],
+				["Pablo","Bases de Datos",17],
+				["Marisa","Sistemas Informáticos",28],
+				["Luis","Redes",26]
+			];
+			
+			document.write("<br>Quien imparte Bases de Datos? " + datos[1][0]); //Pablo
+			document.write("<br>Asignatura de Marisa: " +datos[2][1]); //Sistemas Informaticos
+			document.write("<br>Alumnos de Luis: " + datos[3][2]); //26
+			
+		</script>
+	</body>
+</html>

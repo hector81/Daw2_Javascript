@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio Manipular arrays  </title>		
+	</head>
+	<body>
+		<h1>Actividad 5</h1>
+		
+
+		<script type="text/javascript">
+			//atributos o propiedades de libro
+			//var titulo; 
+			//var autor;
+			//var yearPublicacion;
+
+			//constructores con parametros
+			function Libro(titulo_n,autor_n,yearPublicacion_n){
+				this.titulo = titulo_n;
+				this.autor = autor_n;
+				this.yearPublicacion = yearPublicacion_n;
+			}
+			
+			//Constructor sin parámetros:
+			//function Libro(){
+			//	this.titulo = "";
+			//	this.autor = "";
+			//	this.yearPublicacion = 0;
+			//}
+
+			//Creamos los objetos Instanciamos los objetos
+			//var libro1 = New Libro();
+			//var libro2 = New Libro();
+			//var libro3 = New Libro();
+			//var libro4 = New Libro();
+			//var libro5 = New Libro();
+			//ponemos los valores
+			//libro1.titulo = "Don Quijote de La Mancha";
+			//libro1.autor = "Miguel de Cervantes Saavedra";
+			//libro1.yearPublicacion = 1605;
+			
+			//libro2.titulo = "Cien años de soledad";
+			//libro2.autor = "Gabriel García Marquez";
+			//libro2.yearPublicacion = 1967;
+			
+			//libro3.titulo = "Paula";
+			//libro3.autor = "Isabel Allende Llona";
+			//libro3.yearPublicacion = 1994;
+			
+			//libro4.titulo = "El diario de Anna Frank";
+			//libro4.autor = "Anna Frank";
+			//libro4.yearPublicacion = 1944;
+			
+			//libro5.titulo = "Los miserables";
+			//libro5.autor = "Víctor Hugo";
+			//libro5.yearPublicacion = 1862;
+
+			//otra forma de hacerlo Crear un objeto inicializado() con propiedades):
+			var libro1 = new Libro("Don Quijote de La Mancha","Miguel de Cervantes Saavedra",1605);
+			var libro2 = new Libro("Cien años de soledad","Gabriel García Marquez",1967);
+			var libro3 = new Libro("Paula","Isabel Allende Llona",1994);
+			var libro4 = new Libro("El diario de Anna Frank","Anna Frank",1944);
+			var libro5 = new Libro("Los miserables","Víctor Hugo",1862);
+			//creamos array de objetos libros
+			var arrayLibros= [libro1,libro2,libro3,libro4,libro5];
+			
+			var longitud = arrayLibros.length;
+
+			//recorremos
+			for(var i = 0; i<arrayLibros.length; i++){
+				//Accedemos a las propiedades:
+				document.write("<b>Titulo</b>: " + arrayLibros[i].titulo + " ,<b>Autor</b>:" + arrayLibros[i].autor + " ,<b>año de publicación</b>:" + arrayLibros[i].yearPublicacion + "</br>");
+			}
+			
+			
+			document.write("<b>Titulo</b>");
+			//recorremos
+			for(var i = 0; i<arrayLibros.length; i++){
+				for(var miPropiedad in arrayLibros[i]){
+					//Accedemos a las propiedades:
+					document.write("<b> " + miPropiedad + " </b>"  + arrayLibros[i][miPropiedad] + "</br>");
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- Calcula el número de años que han pasado desde 1/1/1970 hasta el 1/1/2000 (Utilizad el método Date.parse("fecha");
+ donde la cadena fecha debe contener la sintaxis estándar en inglés) -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 7: Calcula el número de años que han pasado desde 1/1/1970 hasta el 1/1/2000</title>
+	</head>
+	<body>
+		<p>Número de años que han pasado desde 1/1/1970 hasta el 1/1/2000</p>
+		<script type="text/javascript">
+			var fechaPrimera = Date.parse("January 1, 1970");		
+			var fechaSegunda = Date.parse("January 1, 2000");
+
+			var minutos = 1000 * 60;
+			var horas = minutos * 60;
+			var dias = horas * 24;
+			var years = dias * 365;
+			var diferencia = Math.round(fechaSegunda / years);
+			
+			document.write("Diferencia " + diferencia + " años");
+		</script>
+	</body>
+</html>

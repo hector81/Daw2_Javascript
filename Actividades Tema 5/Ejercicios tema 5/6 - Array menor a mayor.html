@@ -1,0 +1,76 @@
+<!-- 6.	Crea un script donde a partir del array [1, 4, 2, 9, 11, 44, 111, 7, 4] se realicen los siguientes procesos:
+a.	Mostrar el array ordenado de menor a mayor y de mayor a menor usando la función sort() y definiendo la función de ordenación de forma anónima (sin nombre), 
+es decir, deberás invocar:
+elarray.sort(function (num1,num2) { … } );
+b.	Crea una variable de nombre deMenorAMayor que contenga el resultado de ordenar de menor a mayor los elementos del array.
+c.	Crea una variable de nombre deMayorAMenor que contenga el resultado de ordenar de mayor a menor los elementos del array.
+d.	Muestra por pantalla el array original, la variable deMenorAMayor y la variable deMayorAMenor.
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 6  </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arrayNumeros= [1, 4, 2, 9, 11, 44, 111, 7, 4];
+			var longitud = arrayNumeros.length;
+			var deMenorAMayor = new Array();
+			var deMayorAMenor = new Array();
+			
+			function mostrarArrayNormal(){
+				for(var i = 0; i < longitud; i++){
+					document.write(arrayNumeros[i] + " ");
+				}			
+			}
+			
+			function mostrarArrayOrdenadosSort(){
+				var arrayNumerosNuevo1 = arrayNumeros.sort();
+				for(var i = 0; i < longitud; i++){
+					document.write(arrayNumerosNuevo1[i] + " ");
+				}
+			}
+			
+			function myFunction() {
+				var arrayNumerosNuevo2 = arrayNumeros.sort();
+				arrayNumerosNuevo2.sort(function(a, b){return a-b});
+				for(var i = 0; i < longitud; i++){
+					document.write(arrayNumerosNuevo2[i] + " ");
+				}
+			}
+			
+			function ordenarMenorAMayor(){
+				deMenorAMayor = arrayNumeros.sort();
+				deMenorAMayor.sort(function(a, b){return a-b});
+				for(var i = 0; i < deMenorAMayor.length; i++){
+					document.write(deMenorAMayor[i] + " ");
+				}
+			}
+			
+			function ordenarMayorAMenor(){
+				deMayorAMenor = arrayNumeros.sort();
+				deMayorAMenor.sort(function(a, b){return a-b});
+				for(var i = deMayorAMenor.length-1; i >=0 ; i--){
+					document.write(deMayorAMenor[i] + " ");
+				}
+			}
+			
+			
+			document.write("Mostrar array normal <br>");
+			mostrarArrayNormal();
+			document.write("<br>Mostrar array ordenado sort <br>");
+			mostrarArrayOrdenadosSort();
+			document.write("<br>Mostrar array ordenado elarray.sort(function (num1,num2) { … }  <br>");
+			myFunction();
+			document.write("<br>Crea una variable de nombre deMenorAMayor que contenga el resultado de ordenar de menor a mayor los elementos del array. <br>");
+			ordenarMenorAMayor();
+			document.write("<br>Crea una variable de nombre deMayorAMenor que contenga el resultado de ordenar de mayor a menor los elementos del array. <br>");
+			ordenarMayorAMenor();
+			document.write("<br>Muestra por pantalla el array original <br>");
+			mostrarArrayNormal();
+
+			
+		</script>
+	</body>
+</html>

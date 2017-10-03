@@ -1,0 +1,50 @@
+<!--  -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 2 </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var pan = {blanco:6, de_ajo:5, integral:{de_semillas:{de_avena:3, de_lino:4}}};
+			leche = {entera:4, semi_desnatada:3, desnatada:5};
+			delete pan.de_ajo;
+
+			document.write(
+				"var pan = {blanco:6, de_ajo:5, integral:{de_semillas:{de_avena:3, de_lino:4}}};" + "<br>" +
+				"leche = {entera:4, semi_desnatada:3, desnatada:5};" + "<br>" +
+				"delete pan.de_ajo;" + "<br>" +
+				"<br>"
+			);
+			document.write("Resultados<br>");
+			document.write("pan.integral.de_semillas.de_lino =><br>");
+			document.write(pan.integral.de_semillas.de_lino +"<br>");
+			document.write("pan.integral.sin_semillas.de_lino =><br>");
+			document.write(pan.integral.sin_semillas.de_lino + "<br>");
+			document.write("pan.integral.de_semillas =><br>");
+			document.write(pan.integral.de_semillas + "<br>");
+			document.write("pan.de_semillas.de_ajo	 =><br>");
+			document.write(pan.de_semillas.de_ajo + "<br>");
+			document.write("pan.de_ajo =><br>");
+			document.write(pan.de_ajo + "<br>");
+			document.write("pan['de_ajo']	 =><br>");
+			document.write(pan['de_ajo'] + "<br>");
+			document.write("pan['integral'].de_semillas =><br>");
+			document.write(pan['integral'].de_semillas + "<br>");
+			document.write("pan['blanco']['integral']	 =><br>");
+			document.write(pan['blanco']['integral'] + "<br>");
+			document.write("leche.entera	=><br>");
+			document.write(leche.entera + "<br>");
+			document.write("this.leche.entera	 =><br>");
+			document.write(this.leche.entera+"<br>");
+			document.write("window.leche.entera	 =><br>");
+			document.write(window.leche.entera + "<br>");
+			document.write("window.leche.de_avena	 =><br>");
+			document.write(window.leche.de_avena + "<br>");
+			document.write("this.leche.de_avena.integral =><br>");
+			document.write(this.leche.de_avena.integral + "<br>");
+			
+		</script>
+	</body>
+</html>

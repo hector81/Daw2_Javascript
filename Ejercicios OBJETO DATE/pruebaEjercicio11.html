@@ -1,0 +1,43 @@
+﻿<!-- 1- Muestra en el documento activo el dia de la semana actual-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 1: Día de la semana actual</title>		
+	</head>
+	<body>
+		<p></p>
+		<div>
+		<p>Aquí un párrafo de texto situado antes de la imagen, dentro de un div contenedor</p>
+		<img onclick="mostrarMensaje1();" src="http://i.imgur.com/afC0L.jpg" alt="Notepad++" title="Notepad++, un útil editor de texto"/>
+		<p style="background-color: yellow;" onclick="mostrarMensaje2();">Aquí otro párrafo de texto. JavaScript es un lenguaje utilizado para dotar de efectos dinámicos a las páginas web.</p>
+	</div>
+		<script type="text/javascript">	
+						function mostrarMensaje1(){
+			var bacterias=3.55;
+			var texto="bacterias en la probeta";
+			var numeroInfinito=Infinity;
+			alert('La variable bacterias vale:'+bacterias);
+			bacterias=3.55E5;
+			alert('La variable bacterias vale(multiplicamos por 1000000):'+bacterias);
+			bacterias=3.55E-5;
+			alert('La variable bacterias ahora es un número muy pequeño:'+bacterias);
+			alert('La variable bacterias ahora es(operación sin sentido):'+bacterias*texto);
+			bacterias=3.55e100000000000000000;
+			alert('La variable bacterias ahore es demasiado grande:'+bacterias);
+			bacterias=3.55E-100000000000000000;
+			alert('La variable bacterias ahora es demasiado pequeña:'+bacterias);
+			alert('Un número positivo dividido entre cero(indeterminación matemática) devuelve:'+(4/0));
+			alert('Un número negativo dividido entre cero(indeterminación matemática) devuelve:'+(-4/0));
+			alert('Cero dividido entre cero devuelve:'+(0/0));
+			alert('La variable numeroInfinito vale:'+numeroInfinito);
+			var diezCentimos=10;
+			var veinteCentimos=20;
+			var treintaCentimos=30;
+			alert('Esperamos 0.1 y lo obtenemos:'+((veinteCentimos-diezCentimos)/100));
+			alert('Esperamos 0.1 y no lo obtenemos:'+(treintaCentimos-veinteCentimos)/100);
+			}
+			document.write("<br>");
+		</script>
+	</body>
+</html>

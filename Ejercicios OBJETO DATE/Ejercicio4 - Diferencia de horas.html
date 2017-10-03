@@ -1,0 +1,17 @@
+<!-- 4 . Calcula el número de horas de diferencia entre el sistema actual y el sistema horario GTM -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 4 : Calcula el número de horas de diferencia entre el sistema actual y el sistema horario GTM</title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			var fechaActual = new Date();
+			var diferenciaHoras = fechaActual.getTimezoneOffset();
+			
+			document.write("Horas de diferencia entre el sistema actual y GTM : " + diferenciaHoras);	
+		</script>
+	</body>
+</html>

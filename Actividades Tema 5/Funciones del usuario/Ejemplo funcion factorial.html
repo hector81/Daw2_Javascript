@@ -1,0 +1,29 @@
+<!--
+Crea una función recursiva que calcule el factorial
+de un número.
+n! = n * (n-1)!
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Actividad 3 </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+		var numero = prompt("Introduce numero ");
+		
+		function recursivoFactorial(numero){
+			var resultado = 0;
+			if (numero<=1)
+				return 1;
+			else
+				return numero * recursivoFactorial(numero-1) ;
+		}
+		
+		document.write(recursivoFactorial(numero));
+			
+		</script>
+	</body>
+</html>

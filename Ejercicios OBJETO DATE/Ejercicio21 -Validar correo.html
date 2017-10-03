@@ -1,0 +1,46 @@
+<!-- Ejercicio 21: Hacer un script que pregunte al usuario su nombre y dirección de correo electrónico. Cuando se lea el dato del correo
+electrónico, se deberá comprobar se corresponde con una dirección e-mail. Si la dirección tiene una @ se informará al usuario que la
+dirección es válida y si no la tiene, le avisaremos para que vuelva a introducir un e-mail válido.
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 21: Ejercicio correo electrónico </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">							
+			var usuario;
+			var email;
+			usuario = prompt("Dime tu nombre de usuario");
+			var comprobar = false;
+			do{
+				email = prompt("Dime tu correo electrónico");
+				if(email.search("@")!=-1){
+					document.write("Correo valido");
+					comprobar= false;
+				}else{
+					//document.write("Correo no valido");
+					comprobar= true;
+				}
+			}while(comprobar==true);
+			
+			//usar metodo search o indexof
+			//function validarString(cadenaAnalizar) {
+			  // for (var i = 0; i< cadenaAnalizar.length; i++) {
+				//	 var caracter = cadenaAnalizar.charAt(i);
+					// if( caracter == "@" ) {
+						// return false;
+					  //}  else {
+					//	 return true;
+					  //}
+				//}
+			//} 
+			
+		</script>
+	</body>
+</html>
+
+ 

@@ -1,0 +1,32 @@
+<!-- 
+8.	Crea un script que elimine elementos duplicados en un vector. Para ello utiliza los métodos indexOf() y filter() del objeto Array.
+
+array.indexOf(searchElement[, fromIndex])
+
+
+ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 8  </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arrayOriginal = [8,9,6,1,2,5,9,9];
+			document.write("<br>Mostrar array con duplicados <br>");
+			for(var i = 0; i < arrayOriginal.length; i++){
+				document.write(arrayOriginal[i] + " ");
+			}
+			var arraySinDuplicados = [];
+			var arraySinDuplicados = arrayOriginal.filter(function(elem, pos) {
+			   return arrayOriginal.indexOf(elem) == pos;
+			});
+			document.write("<br>Mostrar array sin duplicados <br>");
+			for(var i = 0; i < arraySinDuplicados.length; i++){
+				document.write(arraySinDuplicados[i] + " ");
+			}
+			
+		</script>
+	</body>
+</html>
