@@ -1,0 +1,81 @@
+<html>
+	<head>		
+		<title>Ejercicio 2</title>
+		<meta charset="UTF-8">
+		<script>
+			var celdasX;
+			var celdasY;
+			var tere;
+			var tede;
+			var texto;
+			var tbody;
+			var tableT;
+			var zona;
+			
+			function crear(){
+				zona= document.getElementById("zonaDatos");
+				tableT = document.createElement("table");
+				zona.appendChild(tableT);
+				for(var i = 1; i < 21; i++){
+					tere= document.createElement("tr");
+					tableT.appendChild(tere);
+					for(var y = 1; y < 21; y++){
+						texto = document.createTextNode(i + "-" + y);
+						tede= document.createElement("td");
+					
+						tere.appendChild(tede);
+						tede.appendChild(texto);
+						
+					}
+				}
+			}
+			
+			function pintarDentro(){
+				document.getElementsByTagName("td").background = "red";
+			}
+			
+			function pintarFuera(){
+				document.getElementsByTagName("td").background = "white";
+			}
+			
+		</script>
+	</head>	
+	
+	<style>
+		body {
+			background-color:grey;
+			
+		}
+		
+		#contenedor {
+			background:pink;
+			width: 1200px;
+			height:600px;
+		}
+		
+		table {
+			 border:1px solid black;
+			 margin:2em auto;
+			 background:white;
+		}
+		
+		td {
+			border:1px solid black;
+			background:white;
+		}
+
+
+		
+
+		
+	</style>
+<body onload="crear()">
+	<div id="contenedor">
+	<h1>TABLA DINAMICA CON EFECTOS ROLLOVER</h1>
+
+		<div id="zonaDatos" onmouseover='pintarDentro()' onmouseout='pintarFuera()'>
+		
+		</div>
+	</div>
+</body>
+</html>

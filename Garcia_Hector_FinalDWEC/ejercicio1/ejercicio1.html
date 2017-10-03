@@ -1,0 +1,166 @@
+﻿<html>
+	<head>		
+		<title>Ejercicio 1</title>
+		<meta charset="UTF-8">
+
+
+		
+	</head>	
+	<script>
+		function Dispositivo_Movil(marca_n,modelo_n,color_n,descripcion_n){
+			this.marca = marca_n;
+			this.modelo = modelo_n;
+			this.color = color_n;
+			this.descripcion = descripcion_n;
+			this.mostrarDatos = function mostrarDatos(){
+				var texto = "<p>Marca: " + this.marca + " Modelo: " +  this.modelo + " Color: " + this.color  + " Descripcion: " +  this.descripcion + "</p><br>";
+				return texto;
+			}
+		}
+		
+		function Smartphone(resolucionCamara_n){
+			this.resolucionCamara = resolucionCamara_n;
+			this.verResolucion = function verResolucion(){
+				var texto = "<p>Resolución camara: " + this.resolucionCamara + "</p><br>";
+				return texto;
+			}
+		}
+		
+		function Tablet(procesador_n,memoriaRAM_n){
+			this.procesador = procesador_n;
+			this.memoriaRAM = memoriaRAM_n;
+			this.verProcesador = function verProcesador(){
+				var texto = "<p>Procesador: " + this.procesador + " Memoria RAM: " + this.memoriaRAM + "</p><br>";
+				return texto;
+			}
+		}
+		
+		var cantidad = 0;
+		var textoA="";
+		function adquirir(producto){
+			productos = [];
+			if(producto == "Sony"){
+				Smartphone.prototype = new Dispositivo_Movil("xPERIS XA Ultra","Blanco","4G,Android 6.0 Marshmallow, pantalla 6º, memoria interna 16 GB");
+				var smart = new Smartphone("Sony");
+				cantidad = document.getElementById("cantidadSony").value;				
+				productos.push(smart);
+				textoA = "<p>Se han comprado " + cantidad + " Smartphones<p>" + smart.mostrarDatos() + smart.verResolucion();				
+			}
+			
+			if(producto == "Wortex"){
+				Tablet.prototype = new Dispositivo_Movil("Zen 10","Negro","Tablet Zen 10 Intel, 32 GB, 2 camaras, Android y Windows 10, 10º + teclado");
+				var tablet = new Tablet("Intel@ Atom@ Z3735F","1.83 GHz");
+				cantidad = document.getElementById("cantidadWortex").value;				
+				productos.push(tablet);
+				textoA = "<p>Se han comprado " + cantidad + " Tablets<p>" + tablet.mostrarDatos() + tablet.verProcesador();
+			}
+			
+			document.getElementById("zonaDatos").innerHTML += textoA;
+					
+		}
+		
+		
+		
+		
+	</script>
+	<style>
+		body {
+			background-color:grey;
+			
+		}
+		
+		#contenedor {
+			margin: 2.5em auto;
+			width: 1200px;
+		}
+		
+		form {
+			background-color:yellow;
+			width: 1200px;
+		}
+		
+		table {
+			border: 1px solid black;
+			width: 1200px;
+		}
+		
+		th {
+			border: 1px solid black;
+			padding: 0.5em;
+			background-color: lightblue;
+		}
+		
+		td {
+			border:1px solid black;
+			padding: 1em;
+		}
+		
+		#zonaDatos {
+			background-color:lightgreen;
+			width: 1200px;
+			padding: 0.5em;
+		}
+		
+		h2 {
+			text-align:center;
+		}
+		
+
+		
+	</style>
+<body>
+	<div id="contenedor">
+	<h1>TIENDA DE DISPOSITIVOS MOVILES</h1>
+		<form>
+			<table>
+				<tr>
+					<th>Foto</th>
+					<th>Productos</th>
+					<th>Euros</th>
+					<th>Control</th>
+				</tr>
+				<tr>
+					<td><img src="MATERIAL/imagenes/smartphone.png"></td>
+					<td>
+						Marca: Sony<br>
+						Modelo: Xperia XA Ultra<br>
+						Color: Blanco<br>
+						Descripción: 4G,Android 6.0 Marshmallow, pantalla 6º, memoria interna 16 GB<br>
+						Camara: 16 MPx
+					</td>
+					<td>
+						<div id="eurosSony">329.00€</div>
+					</td>
+					<td>
+						<p>Indique cantidad</p>
+						<input type="number" id="cantidadSony" value="">
+						<input type="button" value="Adquirir" onclick="adquirir('Sony')">
+					</td>
+				</tr>
+				<tr>
+					<td><img src="MATERIAL/imagenes/tablet.jpg"></td>
+					<td>
+						Marca: Wortex<br>
+						Modelo: Zen 10<br>
+						Color: Negro<br>
+						Descripción: Tablet Zen 10 Intel, 32 GB, 2 camaras, Android y Windows 10, 10º + teclado<br>
+						Procesador: Intel@ Atom@ Z3735F 1.83 GHz
+					</td>
+					<td>
+						<div id="eurosWortex">199.90€</div>
+					</td>
+					<td>
+						<p>Indique cantidad</p>
+						<input type="number" id="cantidadWortex" value="">
+						<input type="button" value="Adquirir" onclick="adquirir('Wortex')">
+					</td>
+				</tr>
+			</table>
+		</form>
+		<h2>Productos adquiridos</h2>
+		<div id="zonaDatos">
+		
+		</div>
+	</div>
+</body>
+</html>

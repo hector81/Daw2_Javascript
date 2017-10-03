@@ -1,0 +1,63 @@
+<html>
+	<head>		
+		<title>Ejercicio 3</title>
+		<meta charset="UTF-8">
+		<script>
+			
+			function cargarFoto(){
+				var fotoElegida;
+				var foto = document.getElementById("sel").value;				
+				return document.getElementById("zonaDatos").innerHTML = "<img src='" + foto + "'>";
+			}
+			
+			
+			
+		</script>
+	</head>	
+	
+	<style>
+		body {
+			background-color:grey;
+			
+		}
+		
+		#contenedor {
+			
+			background:pink;
+			width: 1200px;
+			height:600px;
+		}
+		
+		#zonaDatos {
+			margin: 2.3em auto;
+			background:white;
+			width: 350px;
+			height:350px;
+		}
+
+
+		
+
+		
+	</style>
+<body onload="cargarFoto()">
+	<div id="contenedor">
+	<h1>EJEMPLO PASAR DATOS CON POST EN OBJETOAJAX()</h1>
+
+		
+			<form name="formDibu">Elige un personaje y pulsa en enviar
+				<select name="selectDibu" id="sel">
+					<option value="">Nadie</option>
+					<option value="MATERIAL/imagenes/doraemon.jpg">Doraemon</option>
+					<option value="MATERIAL/imagenes/miku_Hatsune.jpg">Miku_Hatsune</option>
+					<option value="MATERIAL/imagenes/sakura.jpg">Sakura</option>
+					<option value="MATERIAL/imagenes/sesshomaru.jpg">Sesshomaru</option>
+				</select><br>
+				<input type="button" value="Enviar" id="butt" onclick="enviarFot()"><br>
+			</form>
+		<div id="zonaDatos">
+			Sin foto. Elige un personaje
+		</div>
+	</div>
+</body>
+</html>
