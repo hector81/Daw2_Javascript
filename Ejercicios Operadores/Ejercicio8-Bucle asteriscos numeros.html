@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 8: Crear un programa que imprima el sigiuiente dibujo por el log</title>
+		<!-- 1*****
+			 22****
+			 333***
+			 4444**
+			 55555*
+			 666666
+			-->
+	</head>
+	<body>
+		<script type="text/javascript">
+			var numero = 6;
+			var i = numero-1;
+			var j = 1;
+			var numeroS = "";
+			var caracter ="";
+			var asterisco ="*";
+			
+			function imprimirCaracter(numero, caracter){
+				for(var i =1; i <= numero;i++){
+					document.write( caracter);					
+				}
+			}
+			
+			while(j <= numero){
+				numeroS = j.toString();
+				imprimirCaracter(j, numeroS);
+				imprimirCaracter(i, asterisco);
+				document.write( "<br>");				
+				i--;
+				j++;
+			}
+		</script>
+	</body>
+</html>

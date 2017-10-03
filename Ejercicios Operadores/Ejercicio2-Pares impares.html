@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 2: Calcular la media desde 0 a un numero 100, pudiendo seleccionar entre todos, pares e impares</title>		
+	</head>
+	<body>
+		<p>Calcular la media desde 0 a un numero 100, pudiendo seleccionar entre todos, pares e impares</p>
+		<script type="text/javascript">
+			var numero = prompt("Pon un numero");
+			var eleccion = prompt("Pon 1 para impar o 2 para impar");
+			var suma = 0;
+			var media = 0;
+			var contador =0;
+			for (var i = 1; i < numero; i++){
+				if(eleccion == 1){
+					if(i%2 !=0){
+						suma += i;
+						contador++;
+						document.write(i + " + " + "\n");
+					}
+				}else if(eleccion == 2){
+					if(i%2 == 0){
+						suma += i;
+						contador++;
+						document.write(i + " + " + "\n");
+					}
+				}
+								
+			}
+			
+			media = suma/contador;
+			
+			document.write("Numero " + numero +"<br>");
+			document.write("Eleccion " + eleccion +"<br>");
+			document.write("Los numeros sumados " + contador +"<br>");
+			document.write("La suma de los numeros es " + suma+"<br>");
+			document.write("La media es " + media+"<br>");
+			
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 4: A partir de un numero decimal obtener el equivalente binario</title>
+	</head>
+	<body>
+		<p>A partir de un numero decimal obtener el equivalente binario</p>
+		<script type="text/javascript">
+			var numero= prompt("Pon un numero");
+			document.write("El numero es " + numero + "<br>");			
+			
+			function sCambiaSistema(numero, base){       
+				var iNumero = new Number(numero); 
+				var iBase = new Number(base);       
+				return (iNumero.toString(iBase));         
+			} 
+			
+			var binario= sCambiaSistema(numero, 2);
+			document.write("El binario es " + binario + "<br>");
+			
+		</script>
+	</body>
+</html>

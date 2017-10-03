@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 6: Crear un programa que calcule la potencia de un numero, sin usar las funciones existentes, por ejemplo 23=8</title>
+		
+	</head>
+	<body>
+		<p>Crear un programa que calcule la potencia de un numero, sin usar las funciones existentes, por ejemplo 23=8</p>
+		<script type="text/javascript">
+			  var base=prompt('Ingrese base:','');
+			  var exponente=prompt('Ingrese exponente:','');
+			  var potencia=1;
+			  
+			  document.write("La base es: " + base + "<br>");
+			  document.write("El exponente es: " + exponente + "<br>");
+			  while(exponente>0){
+				  potencia = potencia*base;  
+				  exponente--;
+			  }
+			  			  
+			  document.write("La Potencia es: " + potencia + "<br>");
+		</script>
+	</body>
+</html>

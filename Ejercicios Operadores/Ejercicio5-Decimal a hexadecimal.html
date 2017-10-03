@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 5: A partir de un numero decimal obtener el equivalente en hexadecimal</title>
+	</head>
+	<body>
+		<p>A partir de un numero decimal obtener el equivalente en hexadecimal</p>
+		<script type="text/javascript">
+			var numero= prompt("Pon un numero");
+			document.write("El numero es " + numero + "<br>");			
+			
+			function sCambiaSistema(numero, base){       
+				var iNumero = new Number(numero); 
+				var iBase = new Number(base);       
+				return (iNumero.toString(iBase));         
+			} 
+			
+			var hexadecimal= sCambiaSistema(numero, 16);
+			document.write("El hexadecimal es " + hexadecimal + "<br>");
+			
+		</script>
+	</body>
+</html>

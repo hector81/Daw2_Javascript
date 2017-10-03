@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 9 : Crear un programa que cree una pirámide con los números, por ejemplo si se quiere una pirámide de 7 pisos</title>
+		<!--      0
+	             111
+			    22222
+       	       3333333
+			  444444444
+			 55555555555
+		    6666666666666
+
+			-->
+	</head>
+	<body>
+		<script type="text/javascript">
+			var i = 6;
+			var j = 1;
+			var numeroNuevo =0;
+			var numeroS = "";
+			var caracter ="";
+			
+			
+			function imprimirCaracter(numero, caracter){
+				for(var i =1; i <= numero;i++){
+					document.write( caracter);					
+				}
+			}
+			
+			while(i != -1){
+				numeroS = numeroNuevo.toString();
+				imprimirCaracter(i, '&nbsp;&nbsp;');//espacios
+				imprimirCaracter(j, numeroS);
+				document.write( "<br>");
+				numeroNuevo++;
+				i--;
+				j +=2;
+			}
+		
+			
+		</script>
+	</body>
+</html>

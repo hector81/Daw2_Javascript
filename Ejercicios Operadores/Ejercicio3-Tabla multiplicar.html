@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 3: Mostrar la tabla de multiplicar de cualquier numero</title>
+	</head>
+	<body>
+		<p>Mostrar la tabla de multiplicar de cualquier numero</p>
+		
+		<script type="text/javascript">
+			var numero;
+			var multiplicacion ;
+			numero= prompt("Pon un numero");
+			document.write( "TABLA DE MULTIPLICAR DEL " + numero);
+			document.write("<br>");
+			for (i = 0; i < 11; i++){
+			multiplicacion =i*numero;
+				document.write( numero + " X " + i + " = " + multiplicacion+ "<br>");
+				
+			}
+			
+		</script>
+	</body>
+</html>

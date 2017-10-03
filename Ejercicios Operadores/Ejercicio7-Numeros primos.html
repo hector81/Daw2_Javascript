@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Ejercicio 7: Crear un fichero JavaScript que indique si un numero es primo o no</title>
+	</head>
+	<body>
+		<p>Crear un fichero JavaScript que indique si un numero es primo o no</p>
+		<script type="text/javascript">
+			var numero= prompt("Pon un numero");
+			document.write("El numero es " + numero + " y ");
+			var contadorPrimo = 0;
+			
+			for(var z = 1 ; z <= numero; z++){
+				if(numero%z == 0){
+					contadorPrimo++;
+				}							
+			}
+				
+			if(contadorPrimo ==2){
+				document.write(" es primo <br>");
+			}else{
+				document.write(" no es primo <br>");
+			}
+			
+			
+			for(var i = 1 ; i <= numero; i++){
+			var contador =0;
+				for(var j = 1 ; j <= i; j++){
+					if(i%j == 0){
+						contador++;
+					}					
+				}
+				if(contador ==2){
+					document.write(i + " es primo <br>");
+				}else{
+					document.write(i + " no es primo <br>");
+				}
+
+			}
+		</script>
+	</body>
+</html>
