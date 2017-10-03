@@ -1,0 +1,58 @@
+<!--TEMA 4 -Actividad Actividad 5
+En un documento HTML crea un botón que al
+presionarlo, utilice el método resizeTo (500,500)
+para modificar el tamaño de la ventana.
+Nota*: Los navegadores navegadores Firefox Firefox y Chrome «no permiten permiten
+redimensionar ventanas» por motivos de seguridad, probarlo con
+Explorer. -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio actividad 4: En un documento HTML crea un botón que al
+		presionarlo, utilice el método resizeTo (500,500)
+		para modificar el tamaño de la ventana.
+		Nota*: Los navegadores navegadores Firefox Firefox y Chrome «no permiten permiten
+		redimensionar ventanas» por motivos de seguridad, probarlo con
+		Explorer.</title>	
+	</head>
+	<body>
+		<p> En un documento HTML crea un botón que al
+		presionarlo, utilice el método resizeTo (500,500)
+		para modificar el tamaño de la ventana.
+		Nota*: Los navegadores navegadores Firefox Firefox y Chrome «no permiten permiten
+		redimensionar ventanas» por motivos de seguridad, probarlo con
+		Explorer.
+		
+		Nota: En el caso de que se haya creado una ventana mediante
+		window.open() Firefox y Chrome sí permitirán redimensionarla.
+		Modificar el ejercicio anterior para que
+		redimensione la nueva ventana creada:
+		
+		
+		<h1>Abrimos y cerramos ventanas</h1>
+		
+		<input name="button" type="button" onclick="openWin()" value="Abrir ventana" />
+		<input name="button" type="button" onclick="resizeWin()" value="Redimensionar nueva ventana" />
+		<input name="button" type="button" onclick="closeWin()" value="Cerrar nueva ventana" /></p>
+		
+		<script type="text/javascript">	
+			var miVentana;
+		
+			function openWin(){
+				miVentana = window.open( "", "miVentana", "top=600,bottom= 300, left=600,width=300,height=300" );
+			}
+			
+			function resizeWin(){
+				miVentana.resizeTo(500, 500);
+				miVentana.focus();
+			}
+			
+			function closeWin(){
+				miVentana = window.close();
+			}	
+					
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- TEMA 4 ACTIVIDAD 8
+Crea un botón en una pagina web que abra una
+nueva ventana al hacer clic sobre él. En la nueva
+ventana, establecemos los atributos de altura y
+anchura, además de crear etiquetas HTML para
+generar el título de la ventana y un texto en el que
+especifiquemos las propiedades modificadas.
+ probar en firefox -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio actividad 8</title>	
+	</head>
+	<body>
+		<p>
+			<input id="AbrirVentana" type="button" value="Abrir nueva ventana con altura y anchura" onclick="incializar()"/> 
+		</p>
+		<script type="text/javascript">	
+
+			var miVentana;
+		
+			function incializar(){
+				miVentana = window.open( "", "miVentana", "top=600,bottom= 300, left=400,width=200,height=200,resizable=yes" );//resizable para redimensionar la ventana
+				miVentana.document.write('<html>');
+					miVentana.document.write('<head>');
+					miVentana.document.write('<title>Nueva ventaba</title>');
+					miVentana.document.write('</head>');
+				miVentana.document.write('<body>');
+					miVentana.document.write('<p>Se han utilizado las siguientes propiedades</p>');
+					miVentana.document.write('<p>Altura de la ventana: 200<p>');
+					miVentana.document.write('<p>Anchura de la ventana: 200<p>');
+					miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close()'>");
+				miVentana.document.write('</body>');
+				miVentana.document.write('</html>');
+				miVentana.document.write("");
+				
+				
+			}
+
+		</script>
+	</body>
+</html>

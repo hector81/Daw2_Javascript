@@ -1,0 +1,34 @@
+<!-- TEMA 4 ACTIVIDAD 2-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio actividad 2: Crear un script que permita abrir y cerrar una subventana.</title>	
+	</head>
+	<body onload="incializar()">
+		<h1>Crear y abrir una ventana</h1>
+		</br>
+		</br>
+		<p><input id="crear-ventana" type="button" value="Crear nueva ventana" /> 
+		<input id="cerrar-ventana" type="button" value="Cerrar nueva ventana" /> </p>
+		<script type="text/javascript">		
+			function incializar(){
+				document.getElementById("crear-ventana").onclick=abrirNuevaVentana; //desde aquí llamamos a los id del input
+				document.getElementById("cerrar-ventana").onclick=cerrarNuevaVentana; //desde aquí llamamos a los id del input
+			}
+			
+			var nuevaVentana;
+			
+			function abrirNuevaVentana(){
+				nuevaVentana = window.open("https://www.google.es/","width=400,height=800")
+			}
+			
+			function cerrarNuevaVentana(){
+			  if(nuevaVentana){
+				nuevaVentana.close();
+				nuevaVentana = null;
+			  }
+			}
+		</script>
+	</body>
+</html>

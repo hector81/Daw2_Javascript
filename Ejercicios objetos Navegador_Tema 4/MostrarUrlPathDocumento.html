@@ -1,0 +1,25 @@
+<!-- TEMA 4 ACTIVIDAD 4-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio actividad 4: Crea un script donde se muestre la URL completa
+			de la pagina web, el protocolo utilizado y el
+			camino al recurso (path) dentro de la URL.
+			Además crea un botón que al presionarlo, cargue
+			de nuevo el documento documento actual.</title>	
+	</head>
+	<body>
+		<p> URL completa de la pagina web, el protocolo utilizado y el camino al recurso (path) dentro de la URL.
+		<input name="button" type="button" onclick="cargarDocumento();" value="Carga de nuevo el documento actual" /></p></br></br>
+		<script type="text/javascript">		
+			document.write("La URL completa es : " + window.location.href + "<br>");
+			document.write("El protocolo utilizado es : " + window.location.protocol + "<br>");
+			document.write("El camino al recurso (path) dentro de la URL es : " + window.location.pathname + "<br>");
+			
+			function cargarDocumento(){
+				window.location.reload();
+			}
+		</script>
+	</body>
+</html>

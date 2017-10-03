@@ -1,0 +1,23 @@
+<!-- tema 4-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio : javaEnabled</title>	
+	</head>
+	<body>
+		<script type="text/javascript">		
+			
+			if(navigator.javaEnabled()){
+				document.write("Navigator <b>appCodeName</b>: " + navigator.appCodeName +  "<br>");
+				document.write("Navigator <b>appName</b>: " + navigator.appName +  "<br>");
+				document.write("Navigator <b>appVersion</b>: " + navigator.appVersion +  "<br>");
+				document.write("Navigator <b>language</b>: " + navigator.language +  "<br>");
+				document.write("Navigator <b>platform</b>: " + navigator.platform +  "<br>");
+				document.write("Navigator <b>userAgent</b>: " + navigator.userAgent +  "<br>");
+			}else{
+				document.write("No soporta este navegador");
+			}
+		</script>
+	</body>
+</html>

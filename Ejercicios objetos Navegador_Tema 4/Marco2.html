@@ -1,0 +1,27 @@
+<!-- TEMA 4 ACTIVIDAD 7-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Actividad 7 - Marco 1 </title>	
+	</head>
+<body>
+	<form>
+		<input type="Button" value="Cambiar Color" 
+		onclick="campoColor = parent.Marco1.document.form1.color;
+		if(campoColor.selectedIndex==0){
+			colorin = 'green';
+		}else{
+			colorin = 'blue';
+		}
+		campoFrame = parent.Marco1.document.form1.marcos;
+		
+		if(campoFrame.selectedIndex==0){
+			window.parent.Marco1.document.bgColor = colorin;
+		}else{
+			window.parent.Marco2.document.bgColor = colorin;
+		}
+		">
+	</form>
+</body>
+</html>
