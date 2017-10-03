@@ -1,0 +1,43 @@
+<!-- Ejercicio 29. Crea una galería de imágenes básica que muestre 3 imágenes.
+Seleccionaremos la imagen que queremos ver (<select>) y mediante el
+evento onchange la mostraremos. (document.images)
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 29: Galeria imagenes </title>
+		<style type="text/css">
+		body {
+			background-color: pink;
+			text-align:center;
+		}
+	
+		</style>
+	</head>
+	<body>
+		<div id="cuerpo">
+		<h1>Galería básica de imagenes</h1>
+			<form name="galeria">
+				<select name="imagen" size="1" onChange="mostrarImagen()">
+					<option>Elige grupo</option>
+					<option></option>
+					<option value="queen.jpg">Queen</option>
+					<option value="greenday.jpg">Green Day</option>
+					<option value="marea.jpg">Marea</option>
+					<option value="ramones.jpg">Ramones</option>
+				</select>
+			</form>
+		</div>
+		<img src="queen.jpg" name="intro" width="400" height="500" border="0" alt="imagenes">
+
+		<script type="text/javascript">	
+			function mostrarImagen(){
+				if (!document.images);
+				return document.images.intro.src= document.galeria.imagen.options[document.galeria.imagen.selectedIndex].value;
+			}
+		
+		</script>
+	</body>
+</html>

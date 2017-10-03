@@ -1,0 +1,66 @@
+﻿<!-- 4- Crea un programa que pida al usuario un número entero por pantalla y muestre :
+	*Su valor exponencial.
+	*El número con 4 decimales.
+	*El número en binario.
+	*El número en octal.
+	*El número en hexadecimal.
+Utiliza para ello los métodos del objeto Number
+.Cómo dato de muestr, si metes 50, deberías obtener: 5e1 / 50.000 / 00110010 / 62 / 0x32
+var valor1 = Number(var1);//(23) -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Calcular diferentes números</title>
+
+	</head>
+	<body>
+	<p>
+		<script type="text/javascript">
+			var valor;
+			valor = prompt("Intoduzca el valor ");
+			document.write("El valor es : " + valor + "<br>");
+			//creamos objeto
+			var num = new Number(valor);
+			
+			//funciones
+			function cambiarBinario(num, base){        
+				var iNumero = new Number(num); 
+				var iBase = new Number(num); 				 
+				return (iNumero.toString(iBase));			 
+			} 
+			
+			function cambiarOctal(num, base){        
+				var iNumero = new Number(num); 
+				var iBase = new Number(base); 				 
+				return (iNumero.toString(iBase));			 
+			}
+			
+			function cambiarHexadecimal(num, base){        
+				var iNumero = new Number(num); 
+				var iBase = new Number(base); 				 
+				return (iNumero.toString(iBase));			 
+			}
+			
+			//calculos
+			var valorExponencial = num.toExponential();
+			document.write("Su valor exponencial : " + valorExponencial + "<br>");
+			
+			var valor4decimales = num.toPrecision(5);
+			document.write("El número con 4 decimales : " + valor4decimales + "<br>");
+			
+			
+			var valorBinario = num.toString(2); //la base es 2
+			document.write("El número en binario : " + valorBinario + "<br>");
+			
+			var valorOctal = num.toString(8); //la base es 8
+			document.write("El número en octal : " + valorOctal + "<br>");
+			
+			var valorHexadecimal = num.toString(16); //la base es 16
+			document.write("El número en hexadecimal : " + valorHexadecimal + "<br>");
+
+		</script>
+	</p>
+	</body>
+</html>

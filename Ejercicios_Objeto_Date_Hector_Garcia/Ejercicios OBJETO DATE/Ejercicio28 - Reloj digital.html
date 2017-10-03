@@ -1,0 +1,35 @@
+<!-- Ejercicio 28. Visualiza un reloj digital en una página web que se vaya actualizando cada
+500 milisegundos. document.forms[] y setInterval()
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 28: Visualiza un reloj digital </title>
+		
+	</head>
+	<body onload="mueveReloj()">
+		<h1>Reloj digital</h1>
+		<form name="form_reloj">
+			<input type="text" name="reloj" size="10">
+		</form>
+		
+		<script type="text/javascript">	
+		
+		function mueveReloj(){
+			var momentoActual = new Date();
+			var hora = momentoActual.getHours();
+			var minuto = momentoActual.getMinutes();
+			var segundo = momentoActual.getSeconds();
+			
+			var horaImprimible = hora + " : " + minuto + " : " + segundo;
+			
+			document.form_reloj.reloj.value = horaImprimible;
+			
+			setTimeout("mueveReloj()",1000);
+		}
+		
+		</script>
+	</body>
+</html>

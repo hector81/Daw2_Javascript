@@ -1,0 +1,29 @@
+<!-- Ejercicio 16: Busca en la cadena definida en la variable frase el texto que se corresponde con la palabra "vida"
+	frase="Se puede comprender la vida hacia atrás, pero vivirla siempre hacia adelante";
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 15: Buscar la palabra vida </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var palabra="vida";
+			var frase="Se puede comprender la vida hacia atrás, pero vivirla siempre hacia adelante";
+			var booleano;
+			
+			if(frase.indexOf(palabra)!= -1 ){//-1 en caso de que no se encuentre el texto buscado
+				booleano = true;
+			}else{
+				booleano = false;
+			}
+			
+			document.write("¿Tiene el texto la palabra vida ?: " + booleano);
+			
+			
+		</script>
+	</body>
+</html>

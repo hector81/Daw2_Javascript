@@ -1,0 +1,28 @@
+<!-- Ejercicio 15: Preguntar al usuario su nombre y apellidos y almacenalos en dos variables respectivamente. Concatenalos utilizando el método correspondiente
+para almacenarlos en una única variable -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 15: Concatenar nombre y apellidos </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var nombre = prompt("Dime tu nombre");
+			var apellidos = prompt("Dime tu apellidos");
+			
+			var arrayNombre = [nombre, apellidos];
+			
+			var nombreCompleto = "";
+			
+			for(var i = 0; i < arrayNombre.length; i++){
+				nombreCompleto += arrayNombre[i] + " ";
+			}
+			
+			document.write("Tu nombre completo es: " + nombreCompleto);
+			
+		</script>
+	</body>
+</html>

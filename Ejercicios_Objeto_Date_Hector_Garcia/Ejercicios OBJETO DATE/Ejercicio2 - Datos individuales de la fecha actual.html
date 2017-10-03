@@ -1,0 +1,109 @@
+<!-- 2. Extrae los datos individuales de la fecha actual y muestra un mensaje con esta información -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 2: Extrae los datos individuales de la fecha actual y muestra un mensaje con esta información. </title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fechaActual = new Date();
+			
+			var diaSemana = fechaActual.getDay();
+			var diaMes = fechaActual.getDate();
+			var mes = (fechaActual.getMonth()+1);
+			var year = fechaActual.getFullYear();
+			var horaDia = fechaActual.getHours();
+			var minuto = fechaActual.getMinutes();
+			var segundo = fechaActual.getSeconds();
+			var milisegundos = fechaActual.getMilliseconds();
+			
+			
+			
+			switch(diaSemana){
+				case 1:
+					   document.write("El día de la semana es lunes");
+					   break;
+				case 2:
+					   document.write("El día de la semana es martes");
+					   break;
+				case 3:
+					   document.write("El día de la semana es miercoles");
+					   break;
+				case 4:
+					   document.write("El día de la semana es jueves");
+					   break;
+				case 5:
+					   document.write("El día de la semana es viernes");
+					   break;
+				case 6:
+					   document.write("El día de la semana es sabado");
+					   break;
+				case 7:
+					   document.write("El día de la semana es domingo");
+					   break;
+			}
+			
+			document.write("<br>");
+			
+			document.write("El dia del mes es " + diaMes);
+			document.write("<br>");
+			
+			switch(mes){
+				case 1:
+					   document.write("El mes es Enero");
+					   break;
+				case 2:
+					   document.write("El mes es Febrero");
+					   break;
+				case 3:
+					   document.write("El mes es Marzo");
+					   break;
+				case 4:
+					   document.write("El mes es Abril");
+					   break;
+				case 5:
+					   document.write("El mes es Mayo");
+					   break;
+				case 6:
+					   document.write("El mes es Junio");
+					   break;
+				case 7:
+					   document.write("El mes es Julio");
+					   break;
+				case 8:
+					   document.write("El mes es Agosto");
+					   break;
+				case 9:
+					   document.write("El mes es Septiembre");
+					   break;
+				case 10:
+					   document.write("El mes es Octubre");
+					   break;
+				case 11:
+					   document.write("El mes es Noviembre");
+					   break;
+				case 12:
+					   document.write("El mes es Diciembre");
+					   break;
+			}
+			
+			document.write("El dia del mes es " + diaMes);
+			document.write("<br>");
+			document.write("El mes es " + mes);
+			document.write("<br>");
+			document.write("El año es " + year);
+			document.write("<br>");
+			document.write("La hora del dia " + horaDia);
+			document.write("<br>");
+			document.write("El minuto de la hora " + minuto);
+			document.write("<br>");
+			document.write("El segundo del minuto " + segundo);
+			document.write("<br>");
+			document.write("Los milisegundos " + milisegundos);
+			document.write("<br>");
+
+
+		</script>
+	</body>
+</html>

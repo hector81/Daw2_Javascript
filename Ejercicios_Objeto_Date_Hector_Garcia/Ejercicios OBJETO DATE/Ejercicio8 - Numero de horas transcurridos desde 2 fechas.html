@@ -1,0 +1,31 @@
+<!--  8- Escribe el número de horas transcurridos desde 01/01/1970 hasta las 19:26:00 del 11/02/2001 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 8: Escribe el número de horas transcurridos desde 01/01/1970 hasta las 19:26:00 del 11/02/2001.</title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fecha1 = new Date(1970, 01, 01, 0, 0, 0, 0)
+			var fecha2 = new Date(2011, 02, 11, 19, 26, 0, 0)
+			
+			document.write("La primera fecha es " + fecha1 + "<br>");
+			document.write("La segunda fecha es " + fecha2 + "<br>");
+			
+			var diferencia = fecha2.getTime() - fecha1.getTime()					
+			document.write("La diferencia en milisegundos es " + diferencia + "<br>");
+			
+			var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)); 
+            var diferenciaHorasFechas = dias * 24;
+			var diferenciaMinutosFechas = dias * 24 * 60;
+			var diferenciaSegundosFechas = dias * 24 * 60 * 60;
+			
+			document.write("La diferencia en dias es " + dias + "<br>");
+			document.write("La diferencia en horas es " + diferenciaHorasFechas + "<br>");
+			document.write("La diferencia en minutos es " + diferenciaMinutosFechas + "<br>");
+			document.write("La diferencia en segundos es " + diferenciaSegundosFechas + "<br>");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- 4- Modifica el ejercicio 2 de tal manera que aparezcan los datos en la página HTML(cada dato en una fila) y no en una ventana emergente. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>EJERCICIO 4: DNI</title>	
+	</head>
+	<body>
+		<h1>ESTO ES CON ONCLICK Y VENTANA EMERGENTE</h1>
+		<p onclick="alert('Nombre: Héctor García\nDni: 16605555-R\nEmail: hector99@gmail.com\nLugar nacimiento: Logroño\n')"><!-- script dentro del documento HTML -->
+		Nombre: Héctor García</br>
+		Dni: 16605555-R</br>
+		Email: hector99@gmail.com</br>
+		Lugar nacimiento: Logroño</p></br></br>
+		
+		<h1>ESTO ES CON SCRIPT Y DOCUMENT WRITE</h1>
+		<script type="text/javascript"> 
+			document.write("Nombre: Héctor García");
+			document.write("<br />");
+			document.write("Dni: 16605555-R");
+			document.write("<br />");
+			document.write("Email: hector99@gmail.com");
+			document.write("<br />");
+			document.write("Lugar nacimiento: Logroño");
+			document.write("<br />");
+		</script><!-- script dentro del documento HTML -->
+	</body>
+</html>

@@ -1,0 +1,69 @@
+﻿<!-- 6.- Crea un programa que pida al usuario una propuesta de contraseña y
+compruebe si cumple con los siguientes resultados:
+- Tiene entre 8 y 12 caracteres.
+- Tiene una letra mayúscula.
+- Tiene una letra minúscula.
+- Tiene un número.
+- Tiene uno de los siguientes valores: guión bajo, guión alto, arroba,
+almohadilla, tanto por ciento o ampersand.
+
+Si cumple con todos los requisitos se considera una contraseña segura, de lo
+contrario mostrará que es una contraseña no segura.  
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 6 : Pedir al usuario una propuesta de contraseña y compruebar si cumple con los requisitos.</title>
+
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			var password;
+			var comprobarPassword = false;
+			do{
+				password = prompt("Introduce una contraseña : ");
+				if(password.length < 8 || password.length > 12){
+					alert("La contraseña debe tener 8 y 12 caracteres");
+				}else if(password == password.toLowerCase()){
+					alert("La contraseña debe tener una letra mayúscula al menos");
+				}else if(password == password.toUpperCase()){
+					alert("La contraseña debe tener una letra minúscula al menos");
+				}else if(comprobarNumeroPassword(password) == false){
+					alert("La contraseña debe tener un número al menos");
+				}else if(comprobarCaracteresPassword(password) == false){
+					alert("La contraseña debe tener  al menos uno de los siguientes valores: guión bajo(_), guión alto(-), arroba(@), almohadilla(#), tanto por ciento(%) o ampersand(&)");
+				}else{
+					alert("Contraseña correcta");
+					comprobarPassword = true;
+					document.write("La contraseña es " + password);
+				}
+			}while(comprobarPassword != true );
+			
+			//funciones
+			function comprobarNumeroPassword(password){
+				var comprobar = false;
+				for(var i=0; i< password.length; i++) {
+					if(password.charAt(i) == '1' || password.charAt(i) == 'w' || password.charAt(i) == '3' || password.charAt(i) == '4' || password.charAt(i) == '5' || 
+					password.charAt(i) == '6' || password.charAt(i) == '7' || password.charAt(i) == '8' || password.charAt(i) == '9' ){
+						comprobar = true;
+					}
+				}
+				return comprobar;
+			}
+			
+			function comprobarCaracteresPassword(password){
+				var comprobar = false;
+				for(var i=0; i< password.length; i++) {
+					if(password.charAt(i) == '_' || password.charAt(i) == '-' || password.charAt(i) == '@' || password.charAt(i) == '#' || password.charAt(i) == '%' || 
+					password.charAt(i) == '&' ){
+						comprobar = true;
+					}
+				}
+				return comprobar;
+			}
+	
+		</script>
+	</body>
+</html>

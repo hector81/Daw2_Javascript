@@ -1,0 +1,23 @@
+<!-- Ejercicio 14: Averigua la letra del NIF de un dato almacenado en una variable -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 14: Averigua la letra del NIF de un dato almacenado en una variable </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var nif = prompt("Pon nif");
+			
+			var letra;
+			var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+			letra = letras[nif % 23];
+			
+			document.write("El NIF completo es " + nif + "-"  + letra);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- 3- Crea un programa que pida al usuario el valor del radio y muestre por pantalla:
+	*El valor del radio.
+	*El valor del diámetro.
+	*El valor del perímetro de la circunferencia.
+	*El valor del área del círculo.
+	*El valor del área de la eesfera.
+El valor de PI debes obtenerlo del objeto Math, no introducirlo manualmente.
+Debes escribir al lado si son centimetros ,centimetros cuadrados o centimetros cubicos. -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Calcular area</title>
+
+	</head>
+	<body>
+	<p>
+		<script type="text/javascript">
+			var radio;
+			radio = prompt("Intoduzca el valor del radio del circulo en centimetros");
+			
+			document.write("El valor del radio : " + radio + " centimetros" + "<br>");
+			document.write("El valor del radio : " + (radio*100) + " centimetros cuadrados" + "<br>");
+			document.write("El valor del radio : " + (radio*100*100) + " centimetros cubicos" + "<br>");		
+			
+			var diametro = radio*2;
+			document.write("El valor del diametro : " + (diametro) + " centimetros" + "<br>");
+			document.write("El valor del diametro : " + (diametro*100) +" centimetros cuadrados" + "<br>");
+			document.write("El valor del diametro : " + (diametro*100*100) + " centimetros cubicos" + "<br>");
+			
+			var perimetroCircunferencia = 2*Math.PI*radio;
+			document.write("El perimetro de la circunferencia : " + (perimetroCircunferencia) + " centimetros" + "<br>");
+			document.write("El perimetro de la circunferencia : " + (perimetroCircunferencia*100) + " centimetros cuadrados" + "<br>");
+			document.write("El perimetro de la circunferencia : " + (perimetroCircunferencia*100*100) + " centimetros cubicos" + "<br>");
+			
+			var areaCirculo = Math.PI*Math.pow(r,2);
+			document.write("El valor del area del circulo de radio : " + (areaCirculo) + " centimetros" + "<br>");
+			document.write("El valor del area del circulo de radio : " + (areaCirculo*100) +" centimetros cuadrados" + "<br>");
+			document.write("El valor del are del circulo de radio : " + (areaCirculo*100*100) + " centimetros cubicos" + "<br>");
+			
+			var areaEsfera = 4*Math.PI*Math.pow(r,2);
+			document.write("El valor del area de la esfera : " + (areaEsfera) + " centimetros" + "<br>");
+			document.write("El valor del area de la esfera : " + (areaEsfera*100) +" centimetros cuadrados" + "<br>");
+			document.write("El valor del area de la esfera : " + (areaEsfera*100*100) + " centimetros cubicos" + "<br>");
+
+		</script>
+	</p>
+	</body>
+</html>

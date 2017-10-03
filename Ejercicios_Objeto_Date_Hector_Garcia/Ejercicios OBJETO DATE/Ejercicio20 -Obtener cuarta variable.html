@@ -1,0 +1,29 @@
+<!-- Ejercicio 20: Dada una variable, la cual tiene almacenada una frase, obtén de esa variable cada palabra en función de la situación
+de los espacios en blanco y almacena las palabras en un vector denominado palabras. A partir de entonces, muestra el cuarto elemento
+del vector palabras.";
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 20: Vector </title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">			
+			var frase = "Dada una variable la cual tiene almacenada una frase obtén de esa variable cada palabra";
+		
+			var arrayPalabras = frase.split(" ");
+			
+			for (var i=0; i < arrayPalabras.length; i++) {
+				  document.write(arrayPalabras[i] + "<br>");
+			   }
+				
+			
+			document.write("Cuarto elemento : " + arrayPalabras[3]);
+			
+			
+		</script>
+	</body>
+</html>

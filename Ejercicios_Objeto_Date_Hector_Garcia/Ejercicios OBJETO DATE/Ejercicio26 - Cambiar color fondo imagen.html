@@ -1,0 +1,29 @@
+<!-- Ejercicio 26. Crea una página con una imagen cualquiera que cambie el color de fondo
+del documento al entrar y salir de la imagen con el arrastre del puntero.
+(document.bgcolor. onmouseover, onmouseout))
+ -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 26: Crea una página con una imagen que cambie el color</title>
+		
+	</head>
+	<body>
+		<h1>Ejercicio 26: Crea una página con una imagen que cambie el color de fondo cada que la toques</h1>
+		<img src="triste.jpg" width="260" height="130" onmouseover="ponColor1()" onmouseout="ponColor2()">
+			<script type="text/javaScript">
+				function  ponColor1(){
+					document.bgColor="pink";
+				}  
+				function ponColor2(){
+					document.bgColor="yellow";
+				}
+			</script>
+
+	
+					
+		</script>
+	</body>
+</html>

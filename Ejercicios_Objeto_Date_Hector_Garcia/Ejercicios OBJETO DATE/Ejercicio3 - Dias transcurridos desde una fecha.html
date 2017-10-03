@@ -1,0 +1,19 @@
+<!-- 3.Muestra el número de días transcurridos desde el 1/1/1970 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 3: Muestra el número de días transcurridos desde el 1/1/1970</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fechaActual = new Date();		
+			var fechaAntigua = new Date("01/01/1970");
+		
+			var fin = fechaActual.getTime() - fechaAntigua.getTime();
+			var dias = Math.floor(fin / (1000 * 60 * 60 * 24)) ;
+			document.write("Diferencia de días : " + dias);	
+			
+		</script>
+	</body>
+</html>

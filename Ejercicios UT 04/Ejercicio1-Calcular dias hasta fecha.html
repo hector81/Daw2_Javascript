@@ -1,0 +1,29 @@
+﻿<!-- 1- Crear un ejercicio que pida y muestre el numero de días que queden desde hoy hasta el fin de curso 
+23-06-2017. Recuerda que los meses empiezan desde el número 0-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Calcular días hasta fín de curso</title>
+	</head>
+	<body>
+	<p>
+		<script type="text/javascript">
+			var fechaActual = new Date();
+			document.write("Fecha actual : " + fechaActual.getDate() + "/" + (fechaActual.getMonth() +1) + "/" + fechaActual.getFullYear());
+			document.write("<br>");
+			
+			var fechaFin = new Date("6/23/2017");			
+			document.write("Fecha fin de curso : " + fechaFin.getDate() + "/" + (fechaFin.getMonth() +1) + "/" + fechaFin.getFullYear());
+			document.write("<br>");
+
+			// metodo
+			document.write("<br>");
+			var fin = fechaFin.getTime() - fechaActual.getTime();
+			var dias = Math.floor(fin / (1000 * 60 * 60 * 24)) ;
+			document.write("Diferencia de días : " + dias);			
+		</script>
+	</p>
+	</body>
+</html>

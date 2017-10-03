@@ -1,0 +1,22 @@
+<!-- 5: Averigua la fecha que será dentro de 100 días. (gettime y setzone) -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 5: Averigua la fecha que será dentro de 100 días .</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fechaActual = new Date();		
+			var fechaCienDias = new Date();
+			var milisegundosActual = fechaActual.getTime(); //calculamos los milisegundos de la hora actual
+			var milisegundosCien = 8640000000;// multiplicamos 86400 segundos * 100 (por los dias) * 1000 (por los milisegundos)
+			
+			fechaCienDias.setTime(milisegundosActual + milisegundosCien); //los sumamos y se los enviamos a la fecha
+
+			
+			document.write("Fecha dentro de 100 dias : " + fechaCienDias.getDate() + "/" + (fechaCienDias.getMonth()+1) + "/" + fechaCienDias.getFullYear());	
+			
+		</script>
+	</body>
+</html>

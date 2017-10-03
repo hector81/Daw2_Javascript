@@ -1,0 +1,25 @@
+<!-- 10-La siguiente instrucción calcula un número aleatorio entre 1 y 6:
+	Math.round(Math.random()*5)+10
+	Hacer una página web que permita hacer una tirada de dados cuando se pulse un enlace
+	
+	
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 10: Número dados aleatorios</title>
+		
+	</head>
+	<body>
+		<p>Tira los dados pulsando <a onclick="myFunction()" href="#">aquí</a></p>
+		<script type="text/javascript">
+			function myFunction() {
+				var maximo = 6;
+				var minimo = 1;
+				var dado = Math.floor((Math.random() * (maximo - minimo + 1)) + minimo);
+				document.write("El dado ha salido : " + dado);
+			}
+		</script>
+	</body>
+</html>

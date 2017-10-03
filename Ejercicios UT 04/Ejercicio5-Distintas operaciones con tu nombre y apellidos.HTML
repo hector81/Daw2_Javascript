@@ -1,0 +1,42 @@
+﻿<!-- 5.- Crea un programa que pida al usuario su nombre y apellidos y muestre:
+- El tamaño del nombre más los apellidos sin contar espacios en blanco.
+- La cadena en minúsculas y en mayúsculas.
+- Que divida el nombre y los apellidos y los muestre en tres líneas, donde
+ponga Nombre: /Apellido1: /Apellido2.
+- Una propuesta de nombre de usuario, compuesto por la inicial del
+nombre, el primer apellido y la inicial del segundo apellido. Ejemplo, para
+Jesús García Pérez sería jgarciap.
+- Una propuesta de nombre de usuario compuesto por las tres primeras
+letras del nombre y de los dos apellidos, ejemplo jesgarper -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="utf-8" />
+		<title>Ejercicio 5 : Distintas operaciones con tu nombre y apellidos</title>
+
+	</head>
+	<body>
+		<script type="text/javascript">
+			var nombre = prompt("Introduce tu nombre : ");
+			var primerApellido = prompt("Introduce tu primer apellido : ");
+			var segundoApellido = prompt("Introduce tu segundo apellido : ");
+
+			var cadenaSinEspacios = (nombre.trim() + primerApellido.trim() +segundoApellido.trim());
+			document.write("El tamaño del nombre más los apellidos sin contar espacios en blanco = " + cadenaSinEspacios + "<br>");
+			var cadenaMinusculas = (nombre + " " + primerApellido + " " +segundoApellido).toLowerCase();
+			document.write("La cadena en minúsculas  = " + cadenaMinusculas + "<br>");
+			var cadenaMayusculas = (nombre + " " + primerApellido + " " + segundoApellido).toUpperCase();
+			document.write("La cadena en mayúsculas = " + cadenaMayusculas + "<br>");
+			//\n no funciona
+			document.write("Nombre y los apellidos divididos y mostrados en tres líneas = " + "<br>");
+			document.write("Nombre : " + nombre + "<br>Apellido 1 : " + primerApellido + "<br>Apellido 2 : " + segundoApellido + "<br>");
+			
+			var nombreUsuario = (nombre.charAt(0) + primerApellido + segundoApellido.charAt(0)).toLowerCase();
+			document.write("Nombre de usuario, compuesto por la inicial del nombre, el primer apellido y la inicial del segundo apellido = " + nombreUsuario + "<br>");
+			
+			var nombreUsuarioCompuesto = (nombre.substring(0,3) + primerApellido.substring(0,3) + segundoApellido.substring(0,3)).toLowerCase();
+			document.write("Nombre de usuario, compuesto por las tres primeras letras del nombre y de los dos apellidos = " + nombreUsuarioCompuesto + "<br>");
+
+		</script>
+	</body>
+</html>

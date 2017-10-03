@@ -1,0 +1,76 @@
+﻿<!-- 2- Crea un programa que pida la fecha de tu cumpleaños (no hace falta introducir tu año) y saque todos los año en que tu cumpleaños va a caer en domingo desde este año
+hasta el año 2100-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional.dtd">
+<htmlxmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta htpp-equiv="Content-type" content="text/html;"  charset="iso-8859-1" />
+		<title>Calcular día cumpleaños</title>
+
+	</head>
+	<body>
+	<p>
+		<script type="text/javascript">
+			var fechaActual = new Date();
+			var yearActual = fechaActual.getFullYear();
+			
+			var dia;
+			dia = prompt("Intoduzca el dia ");
+			document.write("El dia es : " + dia + "<br>");
+			
+			var mes;
+			mes = prompt("Intoduzca el mes ");
+			document.write("El mes es : " + mes + "<br>");
+			document.write("El año es : " + yearActual + "<br>");
+			
+			//Recibe fecha en formato DD/MM/YYYY
+			var fecha= dia + "/" + mes + "/" + yearActual;
+			function dia_semana(fecha){ 
+				var diaElegido;
+				fecha=fecha.split('/');
+				if(fecha.length!=3){
+						return null;
+				}
+				//Vector para calcular día de la semana de un año regular.
+				var regular =[0,3,3,6,1,4,6,2,5,0,3,5]; 
+				//Vector para calcular día de la semana de un año bisiesto.
+				var bisiesto=[0,3,4,0,2,5,0,3,6,1,4,6]; 
+				//Vector para hacer la traducción de resultado en día de la semana.
+				var semana=['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+				//Día especificado en la fecha recibida por parametro.
+				var dia=fecha[0];
+				//Módulo acumulado del mes especificado en la fecha recibida por parametro.
+				var mes=fecha[1]-1;
+				//Año especificado por la fecha recibida por parametros.
+				var anno=fecha[2];
+				//Comparación para saber si el año recibido es bisiesto.
+				if((anno % 4 == 0) && !(anno % 100 == 0 && anno % 400 != 0))
+					mes=bisiesto[mes];
+				else
+					mes=regular[mes];
+				//Se retorna el resultado del calculo del día de la semana.
+				diaElegido= semana[Math.ceil(Math.ceil(Math.ceil((anno-1)%7)+Math.ceil((Math.floor((anno-1)/4)-Math.floor((3*(Math.floor((anno-1)/100)+1))/4))%7)+mes+dia%7)%7)];
+				return diaElegido;
+			}
+			
+			document.write(dia_semana(fecha) + "<br>");
+			
+			var fechaLimite = new Date("01/01/2100");
+			var yearFinal = fechaLimite.getFullYear();
+			document.write("El año limite es : " + yearFinal + "<br>");
+			
+			function calcularDias(yearActual, yearFinal){
+				var fechaComprobar;
+				for(var i = yearActual ; i <= yearFinal; i++){
+					fechaComprobar = dia + "/" + mes + "/" + i;
+					if(dia_semana(fechaComprobar) == 'Domingo'){
+						document.write(i + " = " + dia_semana(fechaComprobar) + "<br>");
+					}
+				}
+			}
+			
+			document.write(calcularDias(yearActual, yearFinal) + "<br>");
+			
+		</script>
+	</p>
+	</body>
+</html>
