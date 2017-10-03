@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Ejercicio 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding:0;
+			}
+			body {	
+				background: grey;
+			}
+			
+			form {
+				width:500px;
+				height: auto;
+				margin: 4em auto;
+				padding: 2em;
+				background: white;
+			}
+			
+			h1 {
+				border:1px solid black;
+			}
+		</style>
+    </head>
+    <body>
+        
+		<form name="textoArea">
+			<h1>Introduce tu twitter</h1><br><br>
+			Usuario_Twitter<input type="text" id="usuario" maxlength="20"/><br>
+			<textarea id="texto" cols="20" rows="5" onkeypress="contar()"></textarea><br>
+			Caracteres<input type="text" id="caracteres" value="0" maxlength="20"/><br>
+			Quedan<input type="text" id="numeroCaracteres" value="140" maxlength="20"/>Caracteres<br>
+			<input type="button"  value="Enviar" onclick="enviarTwier()"/><br>
+		</form>
+		<script type="text/javascript">
+			var usuario;
+			var texto;
+			var restoLetras;
+			var resto;
+			var total;
+			var ventana;
+			var contadorLetras=0;
+			function controlarUsuario(){
+				var booleano = true;
+				texto = document.getElementById("texto").value;
+				//esto es para controlar al usuario
+				usuario = document.getElementById("usuario").value;
+				if(usuario.length >7){
+					booleano = false;
+				} else if(usuario.charAt(0) != '@'){
+					booleano = false;
+				} 				
+				return booleano;
+			}	
+				
+			//esto es para controlar el texto
+			function contarLetras(texto){
+				var contador =0;
+				for(var i = 0; i< texto.length ; i++){
+					contador++;		
+				}
+				return contador;
+			}
+			//esto es para contar letras pulsadas
+			function contar(){	
+				contadorLetras++;
+				total= 140 - contadorLetras;
+				document.getElementById("caracteres").value = contadorLetras;
+				document.getElementById("numeroCaracteres").value = total;
+				if(contadorLetras > 140 ) {				
+					alert("El usuario ha escrito mas de 140 caracteres");
+				
+				}				
+			}		
+				
+				
+			function enviarTwier(){
+				usuario = document.getElementById("usuario").value;
+				if(controlarUsuario()){
+					ventana = window.open("","ventana","top=300, left=300, height= 450, width= 500, resizable=yes");
+					ventana.document.write("<p>Mensaje enviado al usuario twitter</p><br>");
+					ventana.document.write("<b>" + usuario +"</b><br>");
+					ventana.document.write("<img src='material/TuitBlue.png' /><br>");
+					ventana.document.write("<input type='button' value='Cerrar' onclick='window.close()' values='Cerrar'/> <br>");
+				}else{
+					ventana = window.open("","ventana","top=300, left=300, height= 450, width= 500, resizable=yes");
+					ventana.document.write("<p>El usuario de twitter tiene que tener 7 caracteres, el primero @</p><br>");
+					ventana.document.write("<b>" + usuario + "</b><br>");
+					ventana.document.write("<img src='material/TuitBlack.png' /><br>");
+					ventana.document.write("<input type='button' value='Cerrar' onclick='window.close()' values='Cerrar'/> <br>");
+				}
+				
+			}
+				
+				
+			
+			
+
+		
+		
+		</script>
+		
+    </body>
+</html>

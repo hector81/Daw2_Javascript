@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Ejercicio 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+
+		</style>
+    </head>
+    <body onload="mueveReloj()">
+			<h1>Hora Actual</h1><br><br>
+			<form name="form">
+				<input type="text" name="relojHora" id="horas" size="10">:
+				<input type="text" name="relojMinuto" id="minuto" size="10">:
+				<input type="text" name="relojSegundo" id="segundos" size="10">
+			</form>
+			
+			<br><br>
+			
+			<h1>Programa la alarma</h1><br><br>
+			<input type="number" id="horaAlarma" value="0" maxlength="20"/>:<input type="number" id="minutoAlarma" value="0" maxlength="20"/><br>
+			<input type="button"  value="Activar" onclick="activarAlarma()"/><input type="button"  value="Desactivar" onclick="desactivarAlarma()"/><br>
+			<img name="imagen" src="material/blanco.png" width="300" height="300"/><br>
+
+		<script type="text/javascript">
+			var ventana1 = "material/despertador.jpg";
+			var ventana2 = "material/despertador2.jpg";
+			var ventana3 = "material/blanco.png";
+			
+			function mueveReloj(){			
+				var momentoActual = new Date();
+				//segundos
+				var segundo = momentoActual.getSeconds();
+				var horaSegundos;
+				if(segundo < 10){
+					horaSegundos = "0" + segundo;
+				}else{
+					horaSegundos = segundo;
+				}
+				
+				document.form.relojSegundo.value = horaSegundos;
+				
+				//minuto
+				var minutos = momentoActual.getMinutes();
+				var horaMinutos;
+				if(minutos < 10){
+					horaMinutos = "0" + minutos;
+				}else{
+					horaMinutos = minutos;
+				}
+				document.form.relojMinuto.value = horaMinutos;
+				
+				//horas
+				var horas = momentoActual.getHours();
+				var horaHoras;
+				if(horas < 10){
+					horaHoras = "0" + horas;
+				}else{
+					horaHoras = horas;
+				}
+				document.form.relojHora.value = horas;
+				
+				setTimeout("mueveReloj()",1000);
+				
+				//comprobamos que la hora del reloj y la de la alarma sea la misma 
+				if(activarAlarma()== true){	
+					horas = document.getElementById("horas").value;
+					minuto = document.getElementById("minuto").value;
+					horaAlarma = document.getElementById("horaAlarma").value;
+					minutoAlarma = document.getElementById("minutoAlarma").value;
+					if(horas == horaAlarma && minuto == minutoAlarma){
+						document.images.imagen.src = ventana2;
+					}
+					if(horas != horaAlarma || minuto != minutoAlarma){
+						document.images.imagen.src = ventana1;
+					}
+				}
+				
+			}
+
+			
+
+			//funcion para activar la alarma
+			function activarAlarma(){							
+				estado = true;
+				return estado;	
+			}
+			
+			
+			
+			//funcion desactivar alarmas
+			function desactivarAlarma(){				
+				alert("Alarma desactivada");
+			}
+			
+			
+		</script>
+		
+    </body>
+</html>
